@@ -171,7 +171,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -677,7 +677,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4509603017617356, guid: da737e78fffa63549afbf97c6d6459b5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4509603017617356, guid: da737e78fffa63549afbf97c6d6459b5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3200,6 +3200,34 @@ Prefab:
         type: 2}
       propertyPath: viewRadiusPeripheralVision
       value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016775078955556, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7813006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016775078955556, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.105710246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016775078955556, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.59951293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016775078955556, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.1377643
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016775078955556, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016775078955556, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016775078955556, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
