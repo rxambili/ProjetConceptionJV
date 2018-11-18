@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace CompleteProject
+namespace GameProject
 {
     public class EnemyAttack : MonoBehaviour
     {

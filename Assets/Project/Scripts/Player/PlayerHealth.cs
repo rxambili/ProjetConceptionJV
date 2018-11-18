@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-namespace CompleteProject
+namespace GameProject
 {
     public class PlayerHealth : MonoBehaviour
     {
