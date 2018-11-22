@@ -4,10 +4,10 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 namespace GameProject
-{
+{ 
     public class PlayerHealth : MonoBehaviour
     {
-        public int startingHealth = 100;                            // The amount of health the player starts the game with.
+        private int startingHealth;                            // The amount of health the player starts the game with.
         public int currentHealth;                                   // The current health the player has.
         public Slider healthSlider;                                 // Reference to the UI's health bar.
         public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
@@ -22,7 +22,7 @@ namespace GameProject
         PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
         bool isDead;                                                // Whether the player is dead.
         bool damaged;                                               // True when the player gets damaged.
-
+        PlayerStats playerStats;
 
         void Awake ()
         {
@@ -31,11 +31,17 @@ namespace GameProject
             playerAudio = GetComponent <AudioSource> ();
             playerMovement = GetComponent <PlayerMovement> ();
             playerShooting = GetComponentInChildren <PlayerShooting> ();
+            playerStats = GetComponent<PlayerStats>();
 
-            // Set the initial health of the player.
-            currentHealth = startingHealth;
+            
         }
 
+        private void Start()
+        {
+            // Set the initial health of the player.
+            startingHealth = playerStats.GetStartingHealth();
+            currentHealth = startingHealth;
+        }
 
         void Update ()
         {

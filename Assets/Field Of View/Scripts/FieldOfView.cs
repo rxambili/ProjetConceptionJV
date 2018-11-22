@@ -29,6 +29,7 @@ public class FieldOfView : MonoBehaviour {
     [SerializeField, Tooltip("Affects the ammount of rays casted out when recalculating the fov of the players peripheral vision. Higher values are more costly! Raycast count (for the area behind the player only) =  meshResolutionPeripheralVision")] private int meshResolutionPeripheralVision = 10;
     [SerializeField, Tooltip("Mesh Filter component that holds the generated mesh when drawing the field of view")] private MeshFilter viewMeshFilter;
     private Mesh viewMesh;
+    private PlayerStats playerStats;
 
 
     //variable is used in the DrawFieldOfView method (storing it here it way more efficient - GC.collect...)
@@ -39,6 +40,11 @@ public class FieldOfView : MonoBehaviour {
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
+
+        playerStats = GetComponentInParent<PlayerStats>();
+        viewRadius = playerStats.GetRadius();
+        viewAngle = playerStats.GetAngle();
+        viewRadiusPeripheralVision = playerStats.GetPeripheralRadius();
     }
     void OnEnable() {
         StartCoroutine("FindTargetsWithDelay", delayBetweenFOVUpdates);

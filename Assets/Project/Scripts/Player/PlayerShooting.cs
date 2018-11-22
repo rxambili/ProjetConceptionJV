@@ -5,7 +5,7 @@ namespace GameProject
 {
     public class PlayerShooting : MonoBehaviour
     {
-        public int damagePerShot = 20;                  // The damage inflicted by each bullet.
+        public int damagePerShot = 0;                  // The damage inflicted by each bullet.
         public float timeBetweenBullets = 0.15f;        // The time between each shot.
         public float range = 100f;                      // The distance the gun can fire.
 
@@ -20,6 +20,7 @@ namespace GameProject
         Light gunLight;                                 // Reference to the light component.
 		public Light faceLight;								// Duh
         float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
+        PlayerStats playerStats;
 
 
         void Awake ()
@@ -32,7 +33,14 @@ namespace GameProject
             gunLine = GetComponent <LineRenderer> ();
             gunAudio = GetComponent<AudioSource> ();
             gunLight = GetComponent<Light> ();
+            playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+            
 			//faceLight = GetComponentInChildren<Light> ();
+        }
+
+        private void Start()
+        {
+            damagePerShot = playerStats.GetAtkTir();
         }
 
 
