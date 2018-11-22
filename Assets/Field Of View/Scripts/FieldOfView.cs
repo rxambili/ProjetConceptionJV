@@ -204,7 +204,7 @@ public class FieldOfView : MonoBehaviour {
     /// Finds all visible targets and adds them to the visibleTargets list.
     /// </summary>
     void FindVisibleTargets() {
-        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius + 2, targetMask);
 
         Physics.autoSyncTransforms = false;
 
@@ -217,7 +217,7 @@ public class FieldOfView : MonoBehaviour {
             Vector3 dirToTarget = (target.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2) {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
-                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask)) {
+                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask) && dstToTarget < viewRadius) {
                     isInFOV = true;
                 }
             } else if (hasPeripheralVision) {
