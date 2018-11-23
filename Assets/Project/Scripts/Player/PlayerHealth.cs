@@ -22,7 +22,7 @@ namespace GameProject
         PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
         bool isDead;                                                // Whether the player is dead.
         bool damaged;                                               // True when the player gets damaged.
-        PlayerStats playerStats;
+        PlayerAttributesManager playerAttr;
 
         void Awake ()
         {
@@ -31,15 +31,20 @@ namespace GameProject
             playerAudio = GetComponent <AudioSource> ();
             playerMovement = GetComponent <PlayerMovement> ();
             playerShooting = GetComponentInChildren <PlayerShooting> ();
-            playerStats = GetComponent<PlayerStats>();
+            playerAttr = GetComponent<PlayerAttributesManager>();
 
             
         }
 
         private void Start()
         {
+            InitializeWithStats();
+        }
+
+        public void InitializeWithStats()
+        {
             // Set the initial health of the player.
-            startingHealth = playerStats.GetStartingHealth();
+            startingHealth =  playerAttr.GetStartingHealth();
             currentHealth = startingHealth;
         }
 

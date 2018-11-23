@@ -2,15 +2,14 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 public class CharacterCreationManager : MonoBehaviour
 {
-    public PlayerStats playerStats;
-    public GameStateManager gameStateManager;
-    public SubScene nextSubScene;
+    public PlayerAttributesManager playerAttr;
 
     Canvas canvas;
     public Text constitutionText;
@@ -22,57 +21,57 @@ public class CharacterCreationManager : MonoBehaviour
 
     private void Awake()
     {
-        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        playerAttr = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributesManager>();
     }
 
     void Start()
     {
         canvas = GetComponent<Canvas>();
-        constitutionText.text = playerStats.GetConstitution().ToString("F1");
-        perceptionText.text = playerStats.GetPerception().ToString("F1");
-        meleeText.text = playerStats.GetMelee().ToString("F1");
-        tirText.text = playerStats.GetTir().ToString("F1");
+        constitutionText.text = playerAttr.GetConstitution().ToString("F1");
+        perceptionText.text = playerAttr.GetPerception().ToString("F1");
+        meleeText.text = playerAttr.GetMelee().ToString("F1");
+        tirText.text = playerAttr.GetTir().ToString("F1");
         pointsText.text = string.Format("Points Restant : {0:F1}", pointsRestants);
     }
 
     public void Validate()
     {
-        gameStateManager.ChangeState(nextSubScene);
+        SceneManager.LoadScene(1);
     }
 
     public void SetConstitution(float number)
     {
-        float diff = number - playerStats.GetConstitution();
+        float diff = number - playerAttr.GetConstitution();
         pointsRestants -= diff;
-        playerStats.SetConstitution(number);
-        constitutionText.text = playerStats.GetConstitution().ToString("F1");
+        playerAttr.SetConstitution(number);
+        constitutionText.text = playerAttr.GetConstitution().ToString("F1");
         pointsText.text = string.Format("Points Restant : {0:F1}", pointsRestants);
     }
 
     public void SetPerception(float number)
     {
-        float diff = number - playerStats.GetPerception();
+        float diff = number - playerAttr.GetPerception();
         pointsRestants -= diff;
-        playerStats.SetPerception(number);
-        perceptionText.text = playerStats.GetPerception().ToString("F1");
+        playerAttr.SetPerception(number);
+        perceptionText.text = playerAttr.GetPerception().ToString("F1");
         pointsText.text = string.Format("Points Restant : {0:F1}", pointsRestants);
     }
 
     public void SetMelee(float number)
     {
-        float diff = number - playerStats.GetMelee();
+        float diff = number - playerAttr.GetMelee();
         pointsRestants -= diff;
-        playerStats.SetMelee(number);
-        meleeText.text = playerStats.GetMelee().ToString("F1");
+        playerAttr.SetMelee(number);
+        meleeText.text = playerAttr.GetMelee().ToString("F1");
         pointsText.text = string.Format("Points Restant : {0:F1}", pointsRestants);
     }
 
     public void SetTir(float number)
     {
-        float diff = number - playerStats.GetTir();
+        float diff = number - playerAttr.GetTir();
         pointsRestants -= diff;
-        playerStats.SetTir(number);
-        tirText.text = playerStats.GetTir().ToString("F1");
+        playerAttr.SetTir(number);
+        tirText.text = playerAttr.GetTir().ToString("F1");
         pointsText.text = string.Format("Points Restant : {0:F1}", pointsRestants);
     }
 

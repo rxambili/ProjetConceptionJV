@@ -14,10 +14,18 @@ namespace GameProject
         {
             gameObject.SetActive(true);
             player.transform.SetPositionAndRotation(playerPosition.position, playerPosition.rotation);
-            player.GetComponentInChildren<PlayerShooting>().enabled = true;
-            player.GetComponent<PlayerHealth>().enabled = true;
-            player.GetComponent<PlayerMovement>().enabled = true;
-            player.GetComponentInChildren<FieldOfView>().enabled = true;
+            PlayerShooting shootingScript = player.GetComponentInChildren<PlayerShooting>();
+            shootingScript.enabled = true;
+            shootingScript.InitializeWithStats();
+            PlayerHealth healthScript = player.GetComponentInChildren<PlayerHealth>();
+            healthScript.enabled = true;
+            healthScript.InitializeWithStats();
+            PlayerMovement movementScript = player.GetComponentInChildren<PlayerMovement>();
+            movementScript.enabled = true;
+            movementScript.InitializeWithStats();
+            FieldOfView fovScript = player.GetComponentInChildren<FieldOfView>();
+            fovScript.enabled = true;
+            fovScript.InitializeWithStats();
         }
 
         public override void Exit()

@@ -11,7 +11,7 @@ namespace GameProject
         Vector3 movement;                   // The vector to store the direction of the player's movement.
         Animator anim;                      // Reference to the animator component.
         Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
-        PlayerStats playerStats;
+        PlayerAttributesManager playerAttr;
 #if !MOBILE_INPUT
         int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
         float camRayLength = 100f;          // The length of the ray from the camera into the scene.
@@ -23,7 +23,7 @@ namespace GameProject
             // Create a layer mask for the floor layer.
             floorMask = LayerMask.GetMask("Floor");
 #endif
-            playerStats = GetComponent<PlayerStats>();
+            playerAttr = GetComponent<PlayerAttributesManager>();
             
 
             // Set up references.
@@ -33,7 +33,7 @@ namespace GameProject
 
         private void Start()
         {
-            speed = playerStats.GetSpeed();
+            InitializeWithStats();
         }
 
 
@@ -51,6 +51,11 @@ namespace GameProject
 
             // Animate the player.
             Animating(h, v);
+        }
+
+        public void InitializeWithStats()
+        {
+            speed =  playerAttr.GetSpeed();
         }
 
 

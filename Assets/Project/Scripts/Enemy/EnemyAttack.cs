@@ -78,6 +78,9 @@ namespace GameProject
             // If the player has health to lose...
             if(playerHealth.currentHealth > 0)
             {
+                // animation
+                anim.SetTrigger("Attacking");
+
                 // ... damage the player.
                 playerHealth.TakeDamage (attackDamage);
             }

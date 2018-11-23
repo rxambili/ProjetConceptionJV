@@ -19,4 +19,11 @@ public class GameStateManager : MonoBehaviour {
         subScene.Enter();
         currentSubScene = subScene;
     }
+
+    public void Restart()
+    {
+        currentSubScene.Exit();
+        startingSubScene.Enter();
+        currentSubScene = startingSubScene;
+    }
 }
