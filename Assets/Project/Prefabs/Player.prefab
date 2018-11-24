@@ -1695,7 +1695,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1908284391788972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.12, z: 0}
+  m_LocalPosition: {x: 0, y: 1.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4198994667969770}
@@ -2807,16 +2807,16 @@ MonoBehaviour:
   basePV: 50
   multiplicateurPV: 10
   baseSpeed: 3
-  multiplicateurSpeed: 0.7
+  multiplicateurSpeed: 0.2
   baseRadius: 5
-  multiplicateurRadius: 1
+  multiplicateurRadius: 0.3
   baseAngle: 80
-  multiplicateurAngle: 10
-  basePeripheralRadius: 0.5
-  multiplicateurPeripheralRadius: 0.2
+  multiplicateurAngle: 5
+  basePeripheralRadius: 1
+  multiplicateurPeripheralRadius: 0.1
   baseMelee: 5
   multiplicateurMelee: 1
-  baseTir: 5
+  baseTir: 10
   multiplicateurTir: 1
 --- !u!114 &114182282413974514
 MonoBehaviour:

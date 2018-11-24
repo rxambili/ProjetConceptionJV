@@ -6,6 +6,7 @@ namespace GameProject
     public class EnemyAttack : MonoBehaviour
     {
         public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
+        public float attackDuration = 0.5f;         // The time duration of an attack before damages
         public int attackDamage = 10;               // The amount of health taken away per attack.
 
 
@@ -14,6 +15,7 @@ namespace GameProject
         PlayerHealth playerHealth;                  // Reference to the player's health.
         EnemyHealth enemyHealth;                    // Reference to this enemy's health.
         bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
+        bool isAttacking = false;
         float timer;                                // Timer for counting up to the next attack.
 
 
@@ -60,9 +62,13 @@ namespace GameProject
                 // ... attack.
                 Attack ();
             }
+            if (timer >= attackDuration && isAttacking && enemyHealth.currentHealth > 0)
+            {
+                InflictDamages();
+            }
 
-            // If the player has zero or less health...
-            if(playerHealth.currentHealth <= 0)
+                // If the player has zero or less health...
+                if (playerHealth.currentHealth <= 0)
             {
                 // ... tell the animator the player is dead.
                 anim.SetTrigger ("PlayerDead");
@@ -80,9 +86,18 @@ namespace GameProject
             {
                 // animation
                 anim.SetTrigger("Attacking");
+                isAttacking = true;
+            }
+        }
 
+        void InflictDamages()
+        {
+            // If the player has health to lose and is in range
+            if (playerInRange && playerHealth.currentHealth > 0)
+            {
                 // ... damage the player.
-                playerHealth.TakeDamage (attackDamage);
+                playerHealth.TakeDamage(attackDamage);
+                isAttacking = false;
             }
         }
     }

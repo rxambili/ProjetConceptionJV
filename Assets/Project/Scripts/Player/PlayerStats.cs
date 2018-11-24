@@ -51,4 +51,12 @@ public static class PlayerStats{
     {
         return tir;
     }
+
+    public static void Reset()
+    {
+        perception = 0;
+        constitution = 0;
+        tir = 0;
+        melee = 0;
+    }
 }
