@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
     public Stats currentPlayerStats;
-    public List<Personnage> survivants;
+    public Personnage[] survivants;
 
     void Awake()
     {
