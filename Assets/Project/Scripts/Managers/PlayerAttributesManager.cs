@@ -35,76 +35,76 @@ public class PlayerAttributesManager : MonoBehaviour {
 
     public int GetStartingHealth()
     {
-        return (int)(basePV + multiplicateurPV * PlayerStats.GetConstitution());
+        return (int)(basePV + multiplicateurPV * GameManager.instance.currentPlayerStats.constitution);
     }
 
     public float GetSpeed()
     {
-        return baseSpeed + multiplicateurSpeed * PlayerStats.GetConstitution();
+        return baseSpeed + multiplicateurSpeed * GameManager.instance.currentPlayerStats.constitution;
     }
 
     public float GetRadius()
     {
-        return baseRadius + multiplicateurRadius * PlayerStats.GetPerception();
+        return baseRadius + multiplicateurRadius * GameManager.instance.currentPlayerStats.perception;
     }
 
     public float GetPeripheralRadius()
     {
-        return basePeripheralRadius + multiplicateurPeripheralRadius * PlayerStats.GetPerception();
+        return basePeripheralRadius + multiplicateurPeripheralRadius * GameManager.instance.currentPlayerStats.perception;
     }
 
     public float GetAngle()
     {
-        return baseAngle + multiplicateurAngle * PlayerStats.GetPerception();
+        return baseAngle + multiplicateurAngle * GameManager.instance.currentPlayerStats.perception;
     }
 
     public int GetAtkMelee()
     {
-        return (int)(baseMelee + multiplicateurMelee * PlayerStats.GetMelee());
+        return (int)(baseMelee + multiplicateurMelee * GameManager.instance.currentPlayerStats.melee);
     }
 
     public int GetAtkTir()
     {
-        return (int)(baseTir + multiplicateurTir * PlayerStats.GetTir());
+        return (int)(baseTir + multiplicateurTir * GameManager.instance.currentPlayerStats.tir);
     }
 
     public void SetConstitution(float number)
     {
-        PlayerStats.SetConstitution(number);
+        GameManager.instance.currentPlayerStats.constitution = number;
     }
 
     public void SetPerception(float number)
     {
-        PlayerStats.SetPerception(number);
+        GameManager.instance.currentPlayerStats.perception = number;
     }
 
     public void SetMelee(float number)
     {
-        PlayerStats.SetMelee(number);
+        GameManager.instance.currentPlayerStats.melee = number;
     }
 
     public void SetTir(float number)
     {
-        PlayerStats.SetTir(number);
+        GameManager.instance.currentPlayerStats.tir = number;
     }
 
     public float GetConstitution()
     {
-        return PlayerStats.GetConstitution();
+        return GameManager.instance.currentPlayerStats.constitution;
     }
 
     public float GetPerception()
     {
-        return PlayerStats.GetPerception();
+        return GameManager.instance.currentPlayerStats.perception;
     }
 
     public float GetMelee()
     {
-        return PlayerStats.GetMelee();
+        return GameManager.instance.currentPlayerStats.melee;
     }
 
     public float GetTir()
     {
-        return PlayerStats.GetTir();
+        return GameManager.instance.currentPlayerStats.tir;
     }
 }
