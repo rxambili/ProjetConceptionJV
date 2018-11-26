@@ -23,12 +23,11 @@ namespace GameProject
             // Create a layer mask for the floor layer.
             floorMask = LayerMask.GetMask("Floor");
 #endif
-            playerAttr = GetComponent<PlayerAttributesManager>();
-            
-
+             
             // Set up references.
             anim = GetComponent<Animator>();
             playerRigidbody = GetComponent<Rigidbody>();
+            playerAttr = GetComponent<PlayerAttributesManager>();
         }
 
         private void Start()

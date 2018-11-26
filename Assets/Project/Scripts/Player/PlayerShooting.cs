@@ -8,6 +8,11 @@ namespace GameProject
         public int damagePerShot = 0;                  // The damage inflicted by each bullet.
         public float timeBetweenBullets = 1f;        // The time between each shot.
         public float range = 100f;                      // The distance the gun can fire.
+        public int maxAmmo = 10;
+        public int currentAmmo = 0;
+        public bool isAuto;
+        public AudioClip emptyGunClip;
+        public AudioClip shootClip;
 
 
         float timer;                                    // A timer to determine when to fire.
@@ -21,6 +26,10 @@ namespace GameProject
 		public Light faceLight;								// Duh
         float effectsDisplayTime = 0.02f;                // The time that the effects will display for.
         PlayerAttributesManager playerAttr;
+        Animator anim;
+        Animator hudAnim;
+        RessourcesManager playerRessources;
+        bool isReloading = false;
 
 
         void Awake ()
@@ -34,13 +43,16 @@ namespace GameProject
             gunAudio = GetComponent<AudioSource> ();
             gunLight = GetComponent<Light> ();
             playerAttr = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributesManager>();
-            
-			//faceLight = GetComponentInChildren<Light> ();
+            anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+            hudAnim = GameObject.FindGameObjectWithTag("HUD").GetComponent<Animator>();
+            playerRessources = GameObject.FindGameObjectWithTag("Player").GetComponent<RessourcesManager>();
+            //faceLight = GetComponentInChildren<Light> ();
         }
 
         private void Start()
         {
             InitializeWithStats();
+            currentAmmo = maxAmmo;
         }
 
         public void InitializeWithStats()
@@ -53,11 +65,44 @@ namespace GameProject
             timer += Time.deltaTime;
 
 #if !MOBILE_INPUT
-            // If the Fire1 button is being press and it's time to fire...
-			if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+            if (isAuto)
             {
-                // ... shoot the gun.
-                Shoot ();
+                // If the Fire1 button is being press and it's time to fire...
+                if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0 && !isReloading)
+                {
+                    if (currentAmmo == 0)
+                    {
+                        gunAudio.clip = emptyGunClip;
+                        gunAudio.Play();
+                    }
+                    else
+                    {
+                        // ... shoot the gun.
+                        Shoot();
+                    }
+                }
+            } else
+            {
+                // If the Fire1 button is being press and it's time to fire...
+                if (Input.GetButtonDown("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0 && !isReloading)
+                {
+                    if (currentAmmo == 0)
+                    {
+                        gunAudio.clip = emptyGunClip;
+                        gunAudio.Play();
+                    }
+                    else
+                    {
+                        // ... shoot the gun.
+                        Shoot();
+                    }
+                }
+            }
+
+            if (Input.GetButtonDown("Reload") && Time.timeScale != 0 && !isReloading)
+            {
+                // reload the gun.
+                Reload();
             }
 #else
             // If there is input on the shoot direction stick and it's time to fire...
@@ -68,7 +113,7 @@ namespace GameProject
             }
 #endif
             // If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
-            if(timer >= timeBetweenBullets * effectsDisplayTime)
+            if (timer >= timeBetweenBullets * effectsDisplayTime)
             {
                 // ... disable the effects.
                 DisableEffects ();
@@ -131,6 +176,42 @@ namespace GameProject
                 // ... set the second position of the line renderer to the fullest extent of the gun's range.
                 gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
             }
+            // animation
+            anim.SetTrigger("Shoot");
+
+            // réduire munitions
+            currentAmmo--;
+        }
+
+        void Reload()
+        {
+            
+            if (playerRessources.currentTotalAmmo > 0)
+            {
+                anim.SetTrigger("Reload");
+            } else
+            {
+                anim.SetTrigger("FailedReload");
+                hudAnim.SetTrigger("NoAmmo");
+            }
+            isReloading = true;
+        }
+
+        public void EndReload()
+        {
+            isReloading = false;
+            currentAmmo = currentAmmo + playerRessources.UseAmmo(maxAmmo - currentAmmo);
+            gunAudio.clip = shootClip;
+        }
+
+        public void EndFailedReload()
+        {
+            isReloading = false;
+        }
+
+        public int GetAmmo()
+        {
+            return currentAmmo;
         }
     }
 }
