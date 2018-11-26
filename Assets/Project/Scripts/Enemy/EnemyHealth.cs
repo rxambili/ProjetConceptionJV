@@ -9,10 +9,11 @@ namespace GameProject
         public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
         public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
         public AudioClip deathClip;                 // The sound to play when the enemy dies.
+        public AudioClip hurtClip;
+        public AudioSource enemyAudio;
 
 
         Animator anim;                              // Reference to the animator.
-        AudioSource enemyAudio;                     // Reference to the audio source.
         ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
         CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
         bool isDead;                                // Whether the enemy is dead.
@@ -23,7 +24,6 @@ namespace GameProject
         {
             // Setting up the references.
             anim = GetComponent <Animator> ();
-            enemyAudio = GetComponent <AudioSource> ();
             hitParticles = GetComponentInChildren <ParticleSystem> ();
             capsuleCollider = GetComponent <CapsuleCollider> ();
 
@@ -50,7 +50,13 @@ namespace GameProject
                 // ... no need to take damage so exit the function.
                 return;
 
+            anim.SetTrigger("Hit");
             // Play the hurt sound effect.
+            if (enemyAudio.isPlaying)
+            {
+                enemyAudio.Stop();
+            }
+            enemyAudio.clip = hurtClip;
             enemyAudio.Play ();
 
             // Reduce the current health by the amount of damage sustained.

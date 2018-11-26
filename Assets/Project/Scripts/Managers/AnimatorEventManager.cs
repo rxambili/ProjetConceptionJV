@@ -5,14 +5,21 @@ using UnityEngine;
 namespace GameProject {
     public class AnimatorEventManager : MonoBehaviour {
 
+        PlayerShooting playerShooting;
+
+        private void Awake()
+        {
+            playerShooting = GetComponentInChildren<PlayerShooting>();
+        }
+
         public void EndWeaponReload()
         {
-            GetComponentInChildren<PlayerShooting>().EndReload();
+            playerShooting.EndReload();
         }
 
         public void EndWeaponFailedReload()
         {
-            GetComponentInChildren<PlayerShooting>().EndFailedReload();
+            playerShooting.EndFailedReload();
         }
     }
 }

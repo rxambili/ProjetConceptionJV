@@ -13,6 +13,7 @@ namespace GameProject
         public bool isAuto;
         public AudioClip emptyGunClip;
         public AudioClip shootClip;
+        public AudioClip reloadClip;
 
 
         float timer;                                    // A timer to determine when to fire.
@@ -189,6 +190,10 @@ namespace GameProject
             if (playerRessources.currentTotalAmmo > 0)
             {
                 anim.SetTrigger("Reload");
+                gunAudio.clip = reloadClip;
+                gunAudio.volume = 0.1f*gunAudio.volume;
+                gunAudio.Play();
+
             } else
             {
                 anim.SetTrigger("FailedReload");
@@ -202,6 +207,7 @@ namespace GameProject
             isReloading = false;
             currentAmmo = currentAmmo + playerRessources.UseAmmo(maxAmmo - currentAmmo);
             gunAudio.clip = shootClip;
+            gunAudio.volume = 1f;
         }
 
         public void EndFailedReload()
