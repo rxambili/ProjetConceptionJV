@@ -5,12 +5,12 @@ using UnityEngine;
 public class FieldOfView : MonoBehaviour {
 
     [Header("Field of View Settings")]
-    [SerializeField, Tooltip("Radius or max distance the 'player' can see")] private float viewRadius = 50f;
-    [SerializeField, Range(0, 360), Tooltip("Wideness of the field of view")] private float viewAngle = 90f;
-    
+    [SerializeField, Tooltip("Radius or max distance the 'player' can see")] public float viewRadius = 50f;
+    [SerializeField, Range(0, 360), Tooltip("Wideness of the field of view")] public float viewAngle = 80f;
+
     [Header("Peripheral Vision Settings")]
     [SerializeField, Tooltip("Should the player have a peripheral vision?")] public bool hasPeripheralVision = false;
-    [SerializeField, Tooltip("Radius or max distance the 'player' can see with his peripheral vision.")] private float viewRadiusPeripheralVision = 10f;
+    [SerializeField, Tooltip("Radius or max distance the 'player' can see with his peripheral vision.")] public float viewRadiusPeripheralVision = 1f;
     
     [Header("Edge Resolving Settings")]
     [SerializeField, Tooltip("Iterations of the edge resolving algorithm (higher = more precise but also more costly)")] private int edgeResolveIterations = 1;
