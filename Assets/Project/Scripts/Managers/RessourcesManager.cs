@@ -29,5 +29,10 @@ namespace GameProject {
             return usedAmmo;
         }
 
+        public void AddAmmo(int amount)
+        {
+            currentTotalAmmo += amount;
+        }
+
     }
 }
