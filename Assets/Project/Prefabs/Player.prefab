@@ -3058,7 +3058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoText: {fileID: 0}
-  startingTotalAmmo: 20
+  startingTotalAmmo: 200
 --- !u!114 &114849813176785200
 MonoBehaviour:
   m_ObjectHideFlags: 1

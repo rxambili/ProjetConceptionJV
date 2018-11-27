@@ -159,13 +159,13 @@ namespace GameProject
             if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
             {
                 // Try and find an EnemyHealth script on the gameobject hit.
-                EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();
+                EnemyHealth enemyHealth = shootHit.collider.GetComponentInParent<EnemyHealth> ();
 
                 // If the EnemyHealth component exist...
                 if(enemyHealth != null)
                 {
                     // ... the enemy should take damage.
-                    enemyHealth.TakeDamage (damagePerShot, shootHit.point);
+                    enemyHealth.TakeDamage (damagePerShot, shootHit.point, shootRay.direction);
                 }
 
                 // Set the second position of the line renderer to the point the raycast hit.
