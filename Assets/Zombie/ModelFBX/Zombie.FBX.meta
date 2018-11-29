@@ -582,7 +582,7 @@ ModelImporter:
     - name: Bip01 Neck
       parentName: Bip01 Spine1
       position: {x: -0.25273368, y: -0.000066537854, z: -1.845001e-10}
-      rotation: {x: 1.5262368e-14, y: 0.0000011396826, z: -0.41090375, w: 0.91167873}
+      rotation: {x: 0, y: 0, z: -0.25991476, w: 0.9656316}
       scale: {x: 1, y: 1, z: 0.99999994}
     - name: Bip01 Head
       parentName: Bip01 Neck
@@ -602,7 +602,7 @@ ModelImporter:
     - name: Bip01 L UpperArm
       parentName: Bip01 L Clavicle
       position: {x: -0.15238847, y: 0.000000009536743, z: 0}
-      rotation: {x: -0.11664296, y: 0.078782454, z: 0.002899706, w: 0.99004006}
+      rotation: {x: -0.11664297, y: 0.078782454, z: 0.0028997061, w: 0.99004006}
       scale: {x: 1.0000001, y: 1, z: 1.0000001}
     - name: Bip01 L Forearm
       parentName: Bip01 L UpperArm
@@ -697,7 +697,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1

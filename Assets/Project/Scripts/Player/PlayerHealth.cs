@@ -10,6 +10,7 @@ namespace GameProject
         private int startingHealth;                            // The amount of health the player starts the game with.
         public int currentHealth;                                   // The current health the player has.
         public Slider healthSlider;                                 // Reference to the UI's health bar.
+        public AudioClip hurtClip;
         public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
         public AudioClip deathClip;                                 // The audio clip to play when the player dies.
         public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
@@ -17,7 +18,7 @@ namespace GameProject
 
 
         Animator anim;                                              // Reference to the Animator component.
-        AudioSource playerAudio;                                    // Reference to the AudioSource component.
+        public AudioSource playerAudio;                             // Reference to the AudioSource component.
         PlayerMovement playerMovement;                              // Reference to the player's movement.
         PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
         bool isDead;                                                // Whether the player is dead.
@@ -28,7 +29,6 @@ namespace GameProject
         {
             // Setting up the references.
             anim = GetComponent <Animator> ();
-            playerAudio = GetComponent <AudioSource> ();
             playerMovement = GetComponent <PlayerMovement> ();
             playerShooting = GetComponentInChildren <PlayerShooting> ();
             playerAttr = GetComponent<PlayerAttributesManager>();
@@ -80,6 +80,11 @@ namespace GameProject
             healthSlider.value = currentHealth;
 
             // Play the hurt sound effect.
+            if (playerAudio.isPlaying)
+            {
+                playerAudio.Stop();
+            }
+            playerAudio.clip = hurtClip;
             playerAudio.Play ();
 
             // If the player has lost all it's health and the death flag hasn't been set yet...
