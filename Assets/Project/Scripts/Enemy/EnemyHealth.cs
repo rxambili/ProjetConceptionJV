@@ -70,6 +70,37 @@ namespace GameProject
             }
         }
 
+        public void TakeDamage(int amount)
+        {
+            // If the enemy is dead...
+            if (isDead)
+                // ... no need to take damage so exit the function.
+                return;
+
+            anim.SetTrigger("Hit");
+            // Play the hurt sound effect.
+            if (enemyAudio.isPlaying)
+            {
+                enemyAudio.Stop();
+            }
+            enemyAudio.clip = hurtClip;
+            enemyAudio.Play();
+
+            // Reduce the current health by the amount of damage sustained.
+            currentHealth -= amount;
+
+            
+            // And play the particles.
+            hitParticles.Play();
+
+            // If the current health is less than or equal to zero...
+            if (currentHealth <= 0)
+            {
+                // ... the enemy is dead.
+                Death( Vector3.zero);
+            }
+        }
+
 
         void Death (Vector3 hitDir)
         {

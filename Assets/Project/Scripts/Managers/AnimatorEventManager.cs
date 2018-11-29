@@ -5,21 +5,20 @@ using UnityEngine;
 namespace GameProject {
     public class AnimatorEventManager : MonoBehaviour {
 
-        PlayerShooting playerShooting;
-
-        private void Awake()
-        {
-            playerShooting = GetComponentInChildren<PlayerShooting>();
-        }
-
+        
         public void EndWeaponReload()
         {
-            playerShooting.EndReload();
+            GetComponentInChildren<PlayerShooting>().EndReload();
         }
 
         public void EndWeaponFailedReload()
         {
-            playerShooting.EndFailedReload();
+            GetComponentInChildren<PlayerShooting>().EndFailedReload();
+        }
+
+        public void InflictMeleeDamages()
+        {
+            GetComponentInChildren<MeleeAttack>().InflictDamages();
         }
     }
 }

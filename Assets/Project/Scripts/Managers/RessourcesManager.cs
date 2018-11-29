@@ -18,8 +18,14 @@ namespace GameProject {
 
         // Update is called once per frame
         void Update() {
-            ammoText.text = string.Format("{0} / {1}", GetComponentInChildren<PlayerShooting>().GetAmmo(), currentTotalAmmo);
-    
+            PlayerShooting playerShooting = GetComponentInChildren<PlayerShooting>();
+            if (playerShooting != null)
+            {
+                ammoText.text = string.Format("{0} / {1}", playerShooting.GetAmmo(), currentTotalAmmo);
+            } else
+            {
+                ammoText.text = "Illimité";
+            }
         }
 
         public int UseAmmo(int ammo)
