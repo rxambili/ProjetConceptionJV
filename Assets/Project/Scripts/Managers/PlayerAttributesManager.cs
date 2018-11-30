@@ -11,8 +11,8 @@ public class PlayerAttributesManager : MonoBehaviour {
     [Space(5)]
 
     [Header("Mouvement")]
-    [SerializeField, Tooltip("Speed = Base Speed + MultiplicateurSpeed * Constitution")] private float baseSpeed = 3;
-    [SerializeField, Tooltip("Speed = Base Speed + MultiplicateurSpeed * Constitution")] private float multiplicateurSpeed = 0.7f;
+    [SerializeField, Tooltip("Speed = Base Speed + MultiplicateurSpeed * Agilité")] private float baseSpeed = 3;
+    [SerializeField, Tooltip("Speed = Base Speed + MultiplicateurSpeed * Agilité")] private float multiplicateurSpeed = 0.7f;
 
     [Space(5)]
 
@@ -31,46 +31,60 @@ public class PlayerAttributesManager : MonoBehaviour {
     [Header("Tir")]
     [SerializeField, Tooltip("Dommages Tir = Base Tir + MultiplicateurTir * atkTir")] private float baseTir = 5;
     [SerializeField, Tooltip("Dommages Tir = Base Tir + MultiplicateurTir * atkTir")] private float multiplicateurTir = 1;
+    [SerializeField, Tooltip("Reload Speed = Base Reload Speed + MultiplicateurReloadSpeed * (%agi * Agilité + %tir * atkTir)")] private float baseReloadSpeed = 1;
+    [SerializeField, Tooltip("Reload Speed = Base Reload Speed + MultiplicateurReloadSpeed * (%agi * Agilité + %tir * atkTir)")] private float multiplicateurReloadSpeed = 0.1f;
+    [SerializeField, Range(0, 1), Tooltip("Reload Speed = Base Reload Speed + MultiplicateurReloadSpeed * (%agi * Agilité + %tir * atkTir)")] private float factReloadAgi = 0.5f;
+    [SerializeField, Range(0, 1), Tooltip("Reload Speed = Base Reload Speed + MultiplicateurReloadSpeed * (%agi * Agilité + %tir * atkTir)")] private float factReloadTir = 0.5f;
 
 
     public int GetStartingHealth()
     {
-        return (int)(basePV + multiplicateurPV * GameManager.instance.currentPlayerStats.constitution);
+        return (int)(basePV + multiplicateurPV * GetConstitution());
     }
 
     public float GetSpeed()
     {
-        return baseSpeed + multiplicateurSpeed * GameManager.instance.currentPlayerStats.constitution;
+        return baseSpeed + multiplicateurSpeed * GetAgilite();
     }
 
     public float GetRadius()
     {
-        return baseRadius + multiplicateurRadius * GameManager.instance.currentPlayerStats.perception;
+        return baseRadius + multiplicateurRadius * GetPerception();
     }
 
     public float GetPeripheralRadius()
     {
-        return basePeripheralRadius + multiplicateurPeripheralRadius * GameManager.instance.currentPlayerStats.perception;
+        return basePeripheralRadius + multiplicateurPeripheralRadius * GetPerception();
     }
 
     public float GetAngle()
     {
-        return baseAngle + multiplicateurAngle * GameManager.instance.currentPlayerStats.perception;
+        return baseAngle + multiplicateurAngle * GetPerception();
     }
 
     public int GetAtkMelee()
     {
-        return (int)(baseMelee + multiplicateurMelee * GameManager.instance.currentPlayerStats.melee);
+        return (int)(baseMelee + multiplicateurMelee * GetMelee());
     }
 
     public int GetAtkTir()
     {
-        return (int)(baseTir + multiplicateurTir * GameManager.instance.currentPlayerStats.tir);
+        return (int)(baseTir + multiplicateurTir * GetTir());
+    }
+
+    public float GetReloadSpeed()
+    {
+        return baseReloadSpeed + multiplicateurReloadSpeed * (factReloadAgi * GetAgilite() + factReloadTir * GetTir());
     }
 
     public void SetConstitution(float number)
     {
         GameManager.instance.currentPlayerStats.constitution = number;
+    }
+
+    public void SetAgilite(float number)
+    {
+        GameManager.instance.currentPlayerStats.agilite = number;
     }
 
     public void SetPerception(float number)
@@ -91,6 +105,11 @@ public class PlayerAttributesManager : MonoBehaviour {
     public float GetConstitution()
     {
         return GameManager.instance.currentPlayerStats.constitution;
+    }
+
+    public float GetAgilite()
+    {
+        return GameManager.instance.currentPlayerStats.agilite;
     }
 
     public float GetPerception()

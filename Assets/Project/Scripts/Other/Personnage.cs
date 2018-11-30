@@ -42,6 +42,7 @@ public class Personnage : ScriptableObject{
         genome.ForEach(g =>
         {
             stats.perception = stats.perception + g.bonusPerception;
+            stats.agilite = stats.agilite + g.bonusAgilite;
             stats.constitution = stats.constitution + g.bonusConstitution;
             stats.tir = stats.tir + g.bonusTir;
             stats.melee = stats.melee + g.bonusMelee;

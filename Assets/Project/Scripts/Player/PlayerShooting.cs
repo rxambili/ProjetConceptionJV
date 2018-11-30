@@ -10,6 +10,7 @@ namespace GameProject
         public float range = 100f;                      // The distance the gun can fire.
         public int maxAmmo = 10;
         public int currentAmmo = 0;
+        public float reloadSpeed = 1f;
         public bool isAuto;
         public AudioClip emptyGunClip;
         public AudioClip shootClip;
@@ -59,6 +60,8 @@ namespace GameProject
         public void InitializeWithStats()
         {
             damagePerShot = playerAttr.GetAtkTir();
+            reloadSpeed = playerAttr.GetReloadSpeed();
+            anim.SetFloat("ReloadSpeed", reloadSpeed);
         }
         void Update ()
         {
