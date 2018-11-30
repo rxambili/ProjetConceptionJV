@@ -5,6 +5,7 @@ using UnityEngine;
 namespace GameProject {
     public class AnimatorEventManager : MonoBehaviour {
 
+        
         public void EndWeaponReload()
         {
             GetComponentInChildren<PlayerShooting>().EndReload();
@@ -13,6 +14,11 @@ namespace GameProject {
         public void EndWeaponFailedReload()
         {
             GetComponentInChildren<PlayerShooting>().EndFailedReload();
+        }
+
+        public void InflictMeleeDamages()
+        {
+            GetComponentInChildren<MeleeAttack>().InflictDamages();
         }
     }
 }

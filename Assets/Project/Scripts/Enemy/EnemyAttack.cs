@@ -6,7 +6,6 @@ namespace GameProject
     public class EnemyAttack : MonoBehaviour
     {
         public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
-        public float attackDuration = 0.5f;         // The time duration of an attack before damages
         public int attackDamage = 10;               // The amount of health taken away per attack.
 
 
@@ -15,7 +14,6 @@ namespace GameProject
         PlayerHealth playerHealth;                  // Reference to the player's health.
         EnemyHealth enemyHealth;                    // Reference to this enemy's health.
         bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
-        bool isAttacking = false;
         float timer;                                // Timer for counting up to the next attack.
 
 
@@ -62,10 +60,6 @@ namespace GameProject
                 // ... attack.
                 Attack ();
             }
-            if (timer >= attackDuration && isAttacking && enemyHealth.currentHealth > 0)
-            {
-                InflictDamages();
-            }
 
                 // If the player has zero or less health...
                 if (playerHealth.currentHealth <= 0)
@@ -86,7 +80,6 @@ namespace GameProject
             {
                 // animation
                 anim.SetTrigger("Attacking");
-                isAttacking = true;
             }
         }
 
@@ -97,7 +90,6 @@ namespace GameProject
             {
                 // ... damage the player.
                 playerHealth.TakeDamage(attackDamage);
-                isAttacking = false;
             }
         }
     }
