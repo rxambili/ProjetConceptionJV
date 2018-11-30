@@ -7,7 +7,8 @@ public class PlayerAttributesManager : MonoBehaviour {
     [Header("PV")]
     [SerializeField, Tooltip("PV = Base PV + MultiplicateurPV * Constitution")] private int basePV = 50;
     [SerializeField, Tooltip("PV = Base PV + MultiplicateurPV * Constitution")] private float multiplicateurPV = 10;
-
+    [SerializeField, Tooltip("Resistance = Base Resistance + MultiplicateurResistance * Constitution")] private int baseResistance = 0;
+    [SerializeField, Tooltip("Resistance = Base Resistance + MultiplicateurResistance * Constitution")] private float multiplicateurResistance = 1;
     [Space(5)]
 
     [Header("Mouvement")]
@@ -40,6 +41,11 @@ public class PlayerAttributesManager : MonoBehaviour {
     public int GetStartingHealth()
     {
         return (int)(basePV + multiplicateurPV * GetConstitution());
+    }
+
+    public int GetResistance()
+    {
+        return (int)(baseResistance + multiplicateurResistance * GetConstitution());
     }
 
     public float GetSpeed()

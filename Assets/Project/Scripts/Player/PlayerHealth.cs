@@ -9,6 +9,7 @@ namespace GameProject
     {
         private int startingHealth;                            // The amount of health the player starts the game with.
         public int currentHealth;                                   // The current health the player has.
+        public int resistance;
         public Slider healthSlider;                                 // Reference to the UI's health bar.
         public AudioClip hurtClip;
         public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
@@ -46,6 +47,8 @@ namespace GameProject
             // Set the initial health of the player.
             startingHealth =  playerAttr.GetStartingHealth();
             currentHealth = startingHealth;
+
+            resistance = playerAttr.GetResistance();
         }
 
         void Update ()
@@ -74,7 +77,7 @@ namespace GameProject
             damaged = true;
 
             // Reduce the current health by the damage amount.
-            currentHealth -= amount;
+            currentHealth -= amount * (1 - resistance/100);
 
             // Set the health bar's value to the current health.
             healthSlider.value = currentHealth;
