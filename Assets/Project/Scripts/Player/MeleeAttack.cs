@@ -66,33 +66,43 @@ namespace GameProject
 
         public void InflictDamages()
         {
-            Collider[] targetsInRange = Physics.OverlapSphere(transform.position, range, hitableMask);
-            Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
-
-            for (int i = 0; i < targetsInRange.Length; i++)
+            EnemyHealth enemyHealth = GetClosestEnemy();
+            if (enemyHealth != null)
             {
-
-                Transform target = targetsInRange[i].transform;
-                Vector2 targetPos = new Vector2(target.position.x, target.position.z);
-
-                Vector2 transformPos = new Vector2(playerTransform.position.x, playerTransform.position.z);
-                Vector2 dirToTarget = (targetPos - transformPos).normalized;
-                if (Vector2.Angle(new Vector2(playerTransform.forward.x, playerTransform.forward.z), dirToTarget) < hitAngle / 2)
-                {
-                    // Try and find an EnemyHealth script on the gameobject hit.
-                    EnemyHealth enemyHealth = targetsInRange[i].GetComponentInParent<EnemyHealth>();
-
-                    // If the EnemyHealth component exist...
-                    if (enemyHealth != null)
-                    {
-                        // ... the enemy should take damage.
-                        enemyHealth.TakeDamage(damagePerHit);
-                    }
-                }
+            // ... the enemy should take damage.
+            enemyHealth.TakeDamage(damagePerHit);
             }
         }
 
-        
+        EnemyHealth GetClosestEnemy()
+        {
+            EnemyHealth bestTarget = null;
+            float closestDistanceSqr = Mathf.Infinity;
+            Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            Collider[] enemies = Physics.OverlapSphere(transform.position, range, hitableMask);
+
+            foreach (Collider potentialTarget in enemies)
+            {
+                Transform target = potentialTarget.transform;
+                Vector2 targetPos2D = new Vector2(target.position.x, target.position.z);
+                Vector2 transformPos2D = new Vector2(playerTransform.position.x, playerTransform.position.z);
+                Vector2 directionToTarget = targetPos2D - transformPos2D;
+
+                if (Vector2.Angle(new Vector2(playerTransform.forward.x, playerTransform.forward.z), directionToTarget.normalized) < hitAngle / 2)
+                {
+                    float dSqrToTarget = directionToTarget.sqrMagnitude;
+                    EnemyHealth potentialEnemy = potentialTarget.GetComponentInParent<EnemyHealth>();
+                    if (potentialEnemy != null && dSqrToTarget < closestDistanceSqr)
+                    {
+                        closestDistanceSqr = dSqrToTarget;
+                        bestTarget = potentialEnemy;
+                    }
+                }
+            }
+
+            return bestTarget;
+        }
+
+
     }
 }
