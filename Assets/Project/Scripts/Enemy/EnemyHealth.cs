@@ -92,6 +92,7 @@ namespace GameProject
             
             // And play the particles.
             hitParticles.Play();
+            
 
             // If the current health is less than or equal to zero...
             if (currentHealth <= 0)
