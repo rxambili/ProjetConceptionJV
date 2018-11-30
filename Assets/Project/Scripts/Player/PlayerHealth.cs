@@ -20,8 +20,7 @@ namespace GameProject
 
         Animator anim;                                              // Reference to the Animator component.
         public AudioSource playerAudio;                             // Reference to the AudioSource component.
-        PlayerMovement playerMovement;                              // Reference to the player's movement.
-        PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
+        PlayerMovement playerMovement;                           // Reference to the PlayerShooting script.
         bool isDead;                                                // Whether the player is dead.
         bool damaged;                                               // True when the player gets damaged.
         PlayerAttributesManager playerAttr;
@@ -31,7 +30,6 @@ namespace GameProject
             // Setting up the references.
             anim = GetComponent <Animator> ();
             playerMovement = GetComponent <PlayerMovement> ();
-            playerShooting = GetComponentInChildren <PlayerShooting> ();
             playerAttr = GetComponent<PlayerAttributesManager>();
 
             
@@ -103,7 +101,7 @@ namespace GameProject
         {
             // Set the death flag so this function won't be called again.
             isDead = true;
-
+            PlayerShooting playerShooting = GetComponentInChildren<PlayerShooting>();
             // Turn off any remaining shooting effects.
             if (playerShooting != null)
             {

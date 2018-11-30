@@ -28,10 +28,15 @@ public class PlayerAttributesManager : MonoBehaviour {
     [Header("Mêlée")]
     [SerializeField, Tooltip("Dommages Mêlée = Base Melee + MultiplicateurMelee * atkMelee")] private float baseMelee = 5;
     [SerializeField, Tooltip("Dommages Mêlée = Base Melee + MultiplicateurMelee * atkMelee")] private float multiplicateurMelee = 1;
+    [SerializeField, Tooltip("Chances de critique = Base Chances de critique + MultiplicateurCriticalChance * atkMelee")] private int baseMeleeCriticalChance = 1;
+    [SerializeField, Tooltip("Chances de critique = Base Chances de critique + MultiplicateurCriticalChance * atkMelee")] private float multiplicateurMeleeCriticalChance = 1;
+
 
     [Header("Tir")]
     [SerializeField, Tooltip("Dommages Tir = Base Tir + MultiplicateurTir * atkTir")] private float baseTir = 5;
     [SerializeField, Tooltip("Dommages Tir = Base Tir + MultiplicateurTir * atkTir")] private float multiplicateurTir = 1;
+    [SerializeField, Tooltip("Chances de critique = Base Chances de critique + MultiplicateurCriticalChance * atkTir")] private int baseCriticalChance = 1;
+    [SerializeField, Tooltip("Chances de critique = Base Chances de critique + MultiplicateurCriticalChance * atkTir")] private float multiplicateurCriticalChance = 1;
     [SerializeField, Tooltip("Reload Speed = Base Reload Speed + MultiplicateurReloadSpeed * (%agi * Agilité + %tir * atkTir)")] private float baseReloadSpeed = 1;
     [SerializeField, Tooltip("Reload Speed = Base Reload Speed + MultiplicateurReloadSpeed * (%agi * Agilité + %tir * atkTir)")] private float multiplicateurReloadSpeed = 0.1f;
     [SerializeField, Range(0, 1), Tooltip("Reload Speed = Base Reload Speed + MultiplicateurReloadSpeed * (%agi * Agilité + %tir * atkTir)")] private float factReloadAgi = 0.5f;
@@ -73,10 +78,20 @@ public class PlayerAttributesManager : MonoBehaviour {
         return (int)(baseMelee + multiplicateurMelee * GetMelee());
     }
 
+    public int GetMeleeCriticalChance()
+    {
+        return (int)(baseMeleeCriticalChance + multiplicateurMeleeCriticalChance * GetMelee());
+    }
+
     public int GetAtkTir()
     {
         return (int)(baseTir + multiplicateurTir * GetTir());
     }
+    public int GetCriticalChance()
+    {
+        return (int)(baseCriticalChance + multiplicateurCriticalChance * GetTir());
+    }
+
 
     public float GetReloadSpeed()
     {

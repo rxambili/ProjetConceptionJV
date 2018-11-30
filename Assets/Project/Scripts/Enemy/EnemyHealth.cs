@@ -11,10 +11,12 @@ namespace GameProject
         public AudioClip hurtClip;
         public AudioSource enemyAudio;
         public int deathIntensity;
+        public GameObject head;
+        public ParticleSystem criticalDeathParticles;
+        public ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
 
 
         Animator anim;                              // Reference to the animator.
-        ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
         CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
         bool isDead;                                // Whether the enemy is dead.
         
@@ -24,7 +26,6 @@ namespace GameProject
         {
             // Setting up the references.
             anim = GetComponent <Animator> ();
-            hitParticles = GetComponentInChildren <ParticleSystem> ();
             capsuleCollider = GetComponent <CapsuleCollider> ();
 
             // Setting the current health when the enemy first spawns.
@@ -70,6 +71,27 @@ namespace GameProject
             }
         }
 
+        public void TakeCriticalDamage(Vector3 hitDir)
+        {
+            // If the enemy is dead...
+            if (isDead)
+                // ... no need to take damage so exit the function.
+                return;
+
+            
+            currentHealth = 0;
+            
+            // And play the particles.
+            hitParticles.Play();
+
+            // If the current health is less than or equal to zero...
+            if (currentHealth <= 0)
+            {
+                // ... the enemy is dead.
+                CriticalDeath(hitDir);
+            }
+        }
+
         public void TakeDamage(int amount)
         {
             // If the enemy is dead...
@@ -102,6 +124,38 @@ namespace GameProject
             }
         }
 
+        void CriticalDeath(Vector3 hitDir)
+        {
+            // The enemy is dead.
+            isDead = true;
+
+            // Turn the collider into a trigger so shots can pass through it.
+            capsuleCollider.isTrigger = true;
+
+            // Tell the animator that the enemy is dead.
+            // anim.SetTrigger ("Dead");
+
+            // Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
+            enemyAudio.clip = deathClip;
+            enemyAudio.Play();
+
+            head.SetActive(false);
+            hitParticles.Play();
+
+            SetKinematic(false);
+            GetComponent<Animator>().enabled = false;
+            Rigidbody[] bodies = GetComponentsInChildren<Rigidbody>();
+            int hitBodyIndex = Random.Range(0, bodies.Length - 1);
+            for (var i = 0; i < bodies.Length; i++)
+            {
+                if (i == hitBodyIndex)
+                {
+                    bodies[i].AddForce(deathIntensity * hitDir);
+                }
+
+            }
+            Destroy(gameObject, 2f);
+        }
 
         void Death (Vector3 hitDir)
         {
