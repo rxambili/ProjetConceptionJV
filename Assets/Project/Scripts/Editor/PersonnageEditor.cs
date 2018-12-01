@@ -166,7 +166,7 @@ public class PersonnageEditor : EditorWindow
 
     void AddGene()
     {
-        Gene newGene = new Gene();
+        Gene newGene = CreateGene.Create();
         perso.AddGene(newGene);
         viewIndex = perso.genome.Count;
     }

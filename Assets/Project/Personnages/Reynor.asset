@@ -15,4 +15,5 @@ MonoBehaviour:
   description: Aime casser du Zerg
   age: 31
   artwork: {fileID: 21300000, guid: 4dbce23e71db0654c8eb1e06af88ecaf, type: 3}
-  genome: []
+  genome:
+  - {fileID: 11400000, guid: 24ed02fde94ebe3448dba13ca6bbac5a, type: 2}
