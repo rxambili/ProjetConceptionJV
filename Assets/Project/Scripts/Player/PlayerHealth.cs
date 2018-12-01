@@ -9,6 +9,7 @@ namespace GameProject
     {
         private int startingHealth;                            // The amount of health the player starts the game with.
         public int currentHealth;                                   // The current health the player has.
+        public int resistance;
         public Slider healthSlider;                                 // Reference to the UI's health bar.
         public AudioClip hurtClip;
         public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
@@ -19,8 +20,7 @@ namespace GameProject
 
         Animator anim;                                              // Reference to the Animator component.
         public AudioSource playerAudio;                             // Reference to the AudioSource component.
-        PlayerMovement playerMovement;                              // Reference to the player's movement.
-        PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
+        PlayerMovement playerMovement;                           // Reference to the PlayerShooting script.
         bool isDead;                                                // Whether the player is dead.
         bool damaged;                                               // True when the player gets damaged.
         PlayerAttributesManager playerAttr;
@@ -30,7 +30,6 @@ namespace GameProject
             // Setting up the references.
             anim = GetComponent <Animator> ();
             playerMovement = GetComponent <PlayerMovement> ();
-            playerShooting = GetComponentInChildren <PlayerShooting> ();
             playerAttr = GetComponent<PlayerAttributesManager>();
 
             
@@ -46,6 +45,8 @@ namespace GameProject
             // Set the initial health of the player.
             startingHealth =  playerAttr.GetStartingHealth();
             currentHealth = startingHealth;
+
+            resistance = playerAttr.GetResistance();
         }
 
         void Update ()
@@ -74,7 +75,7 @@ namespace GameProject
             damaged = true;
 
             // Reduce the current health by the damage amount.
-            currentHealth -= amount;
+            currentHealth -= amount * (1 - resistance/100);
 
             // Set the health bar's value to the current health.
             healthSlider.value = currentHealth;
@@ -100,7 +101,7 @@ namespace GameProject
         {
             // Set the death flag so this function won't be called again.
             isDead = true;
-
+            PlayerShooting playerShooting = GetComponentInChildren<PlayerShooting>();
             // Turn off any remaining shooting effects.
             if (playerShooting != null)
             {
