@@ -10,4 +10,5 @@ public class Gene{
     public float bonusConstitution { get; set; }
     public float bonusTir { get; set; }
     public float bonusMelee { get; set; }
+
 }

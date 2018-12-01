@@ -48,4 +48,13 @@ public class Personnage : ScriptableObject{
             stats.melee = stats.melee + g.bonusMelee;
         });
     }
+    public Sprite getArtwork()
+    {
+        return this.artwork;
+    }
+    public string getName()
+    {
+        return this.name;
+    }
+    
 }
