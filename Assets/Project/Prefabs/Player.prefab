@@ -3314,6 +3314,7 @@ MonoBehaviour:
   timeBetweenHits: 0.5
   range: 1
   hitAngle: 90
+  criticalChance: 1
   isAuto: 0
 --- !u!114 &114143332662364394
 MonoBehaviour:
@@ -3328,6 +3329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basePV: 50
   multiplicateurPV: 10
+  baseResistance: 0
+  multiplicateurResistance: 2
   baseSpeed: 3
   multiplicateurSpeed: 0.2
   baseRadius: 5
@@ -3338,8 +3341,12 @@ MonoBehaviour:
   multiplicateurPeripheralRadius: 0.1
   baseMelee: 5
   multiplicateurMelee: 1
+  baseMeleeCriticalChance: 1
+  multiplicateurMeleeCriticalChance: 1
   baseTir: 10
   multiplicateurTir: 1
+  baseCriticalChance: 1
+  multiplicateurCriticalChance: 1
   baseReloadSpeed: 0.6
   multiplicateurReloadSpeed: 0.2
   factReloadAgi: 0.2
@@ -3356,6 +3363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  resistance: 0
   healthSlider: {fileID: 0}
   hurtClip: {fileID: 8300000, guid: 9922a12f34d0a084aab32de985459723, type: 3}
   damageImage: {fileID: 0}
@@ -3454,6 +3462,7 @@ MonoBehaviour:
   maxAmmo: 10
   currentAmmo: 0
   reloadSpeed: 1
+  criticalChance: 1
   isAuto: 0
   emptyGunClip: {fileID: 8300000, guid: fa9122ed827d66e4ca928006ea65be4c, type: 3}
   shootClip: {fileID: 8300000, guid: fa7f046ce321d4021b5e753bf1152916, type: 3}

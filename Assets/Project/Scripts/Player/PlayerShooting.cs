@@ -11,6 +11,7 @@ namespace GameProject
         public int maxAmmo = 10;
         public int currentAmmo = 0;
         public float reloadSpeed = 1f;
+        public int criticalChance = 1;
         public bool isAuto;
         public AudioClip emptyGunClip;
         public AudioClip shootClip;
@@ -61,6 +62,7 @@ namespace GameProject
         {
             damagePerShot = playerAttr.GetAtkTir();
             reloadSpeed = playerAttr.GetReloadSpeed();
+            criticalChance = playerAttr.GetCriticalChance();
             anim.SetFloat("ReloadSpeed", reloadSpeed);
         }
         void Update ()
@@ -167,8 +169,16 @@ namespace GameProject
                 // If the EnemyHealth component exist...
                 if(enemyHealth != null)
                 {
-                    // ... the enemy should take damage.
-                    enemyHealth.TakeDamage (damagePerShot, shootHit.point, shootRay.direction);
+                    int rnd = Random.Range(1, 100);
+                    if (rnd <= criticalChance)
+                    {
+                        enemyHealth.TakeCriticalDamage(shootRay.direction);
+                    }
+                    else
+                    {
+                        // ... the enemy should take damage.
+                        enemyHealth.TakeDamage(damagePerShot, shootHit.point, shootRay.direction);
+                    }
                 }
 
                 // Set the second position of the line renderer to the point the raycast hit.

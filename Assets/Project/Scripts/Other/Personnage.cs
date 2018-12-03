@@ -10,9 +10,9 @@ public class Personnage : ScriptableObject{
     public string description;
     public int age;
     public Sprite artwork;
-    public List<Gene> genome = new List<Gene>();
+    [SerializeField] public List<Gene> genome = new List<Gene>();
 
-    private Stats stats = new Stats();
+    [SerializeField] private Stats stats = new Stats();
     private bool isDirty = true;
     
     public void AddGene(Gene g)
@@ -48,4 +48,13 @@ public class Personnage : ScriptableObject{
             stats.melee = stats.melee + g.bonusMelee;
         });
     }
+    public Sprite getArtwork()
+    {
+        return this.artwork;
+    }
+    public string getName()
+    {
+        return this.name;
+    }
+    
 }

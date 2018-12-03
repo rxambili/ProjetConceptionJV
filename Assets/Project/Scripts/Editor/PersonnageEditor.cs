@@ -116,7 +116,7 @@ public class PersonnageEditor : EditorWindow
                 GUILayout.EndHorizontal();
 
                 perso.genome[viewIndex - 1].bonusConstitution = EditorGUILayout.FloatField("Constitution", perso.genome[viewIndex - 1].bonusConstitution);
-                perso.genome[viewIndex - 1].bonusConstitution = EditorGUILayout.FloatField("Agilité", perso.genome[viewIndex - 1].bonusAgilite);
+                perso.genome[viewIndex - 1].bonusAgilite = EditorGUILayout.FloatField("Agilité", perso.genome[viewIndex - 1].bonusAgilite);
                 perso.genome[viewIndex - 1].bonusPerception = EditorGUILayout.FloatField("Perception", perso.genome[viewIndex - 1].bonusPerception);
                 perso.genome[viewIndex - 1].bonusTir = EditorGUILayout.FloatField("Tir", perso.genome[viewIndex - 1].bonusTir);
                 perso.genome[viewIndex - 1].bonusMelee = EditorGUILayout.FloatField("Melee", perso.genome[viewIndex - 1].bonusMelee);
@@ -166,7 +166,7 @@ public class PersonnageEditor : EditorWindow
 
     void AddGene()
     {
-        Gene newGene = new Gene();
+        Gene newGene = CreateGene.Create();
         perso.AddGene(newGene);
         viewIndex = perso.genome.Count;
     }

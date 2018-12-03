@@ -11,6 +11,7 @@ namespace GameProject
         public float timeBetweenHits = 1f;        // The time between each shot.
         public float range = 2f;
         public int hitAngle = 90;
+        public int criticalChance = 1;
         public bool isAuto;
 
         float timer;
@@ -33,6 +34,7 @@ namespace GameProject
         public void InitializeWithStats()
         {
             damagePerHit = playerAttr.GetAtkMelee();
+            criticalChance = playerAttr.GetMeleeCriticalChance();
         }
 
         // Update is called once per frame
@@ -69,8 +71,16 @@ namespace GameProject
             EnemyHealth enemyHealth = GetClosestEnemy();
             if (enemyHealth != null)
             {
-            // ... the enemy should take damage.
-            enemyHealth.TakeDamage(damagePerHit);
+                int rnd = Random.Range(1, 100);
+                if (rnd <= criticalChance)
+                {
+                    enemyHealth.TakeCriticalDamage(Vector3.zero);
+                }
+                else
+                {
+                    // ... the enemy should take damage.
+                    enemyHealth.TakeDamage(damagePerHit);
+                }
             }
         }
 
