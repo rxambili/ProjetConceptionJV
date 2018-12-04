@@ -169,7 +169,7 @@ Prefab:
     - target: {fileID: 114177819319481408, guid: 66e7f485888d55a408b7dacc85fc5f59,
         type: 2}
       propertyPath: currentPlayerTraits.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4973272836958952, guid: 66e7f485888d55a408b7dacc85fc5f59, type: 2}
       propertyPath: m_LocalPosition.x
@@ -207,7 +207,7 @@ Prefab:
         type: 2}
       propertyPath: currentPlayerTraits.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: c7a0ba7ea395f5e4694c4d68a76360c7,
+      objectReference: {fileID: 11400000, guid: e7dff188a5380d54785e0b5606b90737,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e7f485888d55a408b7dacc85fc5f59, type: 2}
@@ -698,6 +698,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &664998431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1545033153047924, guid: 52dc8b531d418c24b995014ad8eefafe,
+    type: 2}
+  m_PrefabInternal: {fileID: 899483413}
+--- !u!114 &664998439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664998431}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243a781cad112c75d0008dfa8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: daf9781cad112c75d0008dfa8d76c639, type: 3}
+  textureRamp: {fileID: 0}
+  rampOffset: 0
+--- !u!114 &664998440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664998431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae42c8f78c60684aab6be6c18bd7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  colorblindShader: {fileID: 4800000, guid: b35b8f7ae8cf168488129d5f5f39ebf4, type: 3}
+--- !u!114 &664998441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664998431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53541d77655de8840ac12e47ebf101e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wavelength: 1
+  DistortionStrength: 0.25
+  Sparkling: 0
+  SaturationBase: 1
+  SaturationSpeed: 1
+  SaturationAmplitude: 0.3
+  currentShader: {fileID: 4800000, guid: 9a000f73a8e3410439f67f608719c581, type: 3}
 --- !u!1001 &899483413
 Prefab:
   m_ObjectHideFlags: 0

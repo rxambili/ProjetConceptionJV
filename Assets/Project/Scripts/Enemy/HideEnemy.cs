@@ -18,7 +18,6 @@ public class HideEnemy : IHideable
     public override void OnFOVEnter()
     {
         base.OnFOVEnter();
-        Debug.Log("fovEnter");
         Component[] meshComponents = GetComponentsInChildren(typeof(SkinnedMeshRenderer), true);
         foreach (SkinnedMeshRenderer m in meshComponents)
         {
@@ -30,7 +29,6 @@ public class HideEnemy : IHideable
     public override void OnFOVLeave()
     {
         base.OnFOVLeave();
-        Debug.Log("fovLeave");
         Component[] meshComponents = GetComponentsInChildren(typeof(SkinnedMeshRenderer), true);
         foreach (SkinnedMeshRenderer m in meshComponents)
         {

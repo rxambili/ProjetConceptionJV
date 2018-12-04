@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New third eye trait", menuName = "Trait/Others/Third Eye Trait")]
+[CreateAssetMenu(fileName = "New third eye trait", menuName = "Trait/Third Eye Trait")]
 [System.Serializable]
 public class ThirdEyeTrait : Trait {
 
