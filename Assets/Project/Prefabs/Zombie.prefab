@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 95050814698222264}
   - component: {fileID: 54955256090508006}
   - component: {fileID: 82932098212106252}
+  - component: {fileID: 82376605734163600}
   - component: {fileID: 136186703392959630}
   - component: {fileID: 135698083578777550}
   - component: {fileID: 195793505614022968}
@@ -183,7 +184,6 @@ GameObject:
   - component: {fileID: 114249059397979696}
   - component: {fileID: 114542779284185800}
   - component: {fileID: 114956521610808264}
-  - component: {fileID: 82376605734163600}
   m_Layer: 9
   m_Name: Zombie
   m_TagString: Untagged
@@ -1961,6 +1961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4520a1e5763e943a01eeb455ed82aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInFov: 0
 --- !u!114 &114956521610808264
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,13 +5,18 @@ using UnityEngine;
 public class FieldOfView : MonoBehaviour {
 
     [Header("Field of View Settings")]
-    [SerializeField, Tooltip("Radius or max distance the 'player' can see")] public float viewRadius = 50f;
+    [SerializeField, Tooltip("Radius or max distance the 'player' can see")] public float viewRadius = 5f;
     [SerializeField, Range(0, 360), Tooltip("Wideness of the field of view")] public float viewAngle = 80f;
 
     [Header("Peripheral Vision Settings")]
     [SerializeField, Tooltip("Should the player have a peripheral vision?")] public bool hasPeripheralVision = false;
     [SerializeField, Tooltip("Radius or max distance the 'player' can see with his peripheral vision.")] public float viewRadiusPeripheralVision = 1f;
-    
+
+    [Header("Third eye")]
+    [SerializeField, Tooltip("Should the player have a third eye?")] public bool hasThirdEye = false;
+    [SerializeField, Tooltip("Radius or max distance the 'player' can see with his third eye.")] public float viewRadiusThirdEye = 3f;
+    [SerializeField, Range(0, 360), Tooltip("Wideness of the field of view of the third eye")] public float viewAngleThirdEye = 60f;
+
     [Header("Edge Resolving Settings")]
     [SerializeField, Tooltip("Iterations of the edge resolving algorithm (higher = more precise but also more costly)")] private int edgeResolveIterations = 1;
     [SerializeField] private float edgeDstThreshold;
@@ -28,6 +33,8 @@ public class FieldOfView : MonoBehaviour {
     [SerializeField, Tooltip("Affects the ammount of rays casted out when recalculating the fov. Raycast count = viewAngle * meshResolution")] private int meshResolution = 10;
     [SerializeField, Tooltip("Affects the ammount of rays casted out when recalculating the fov of the players peripheral vision. Higher values are more costly! Raycast count (for the area behind the player only) =  meshResolutionPeripheralVision")] private int meshResolutionPeripheralVision = 10;
     [SerializeField, Tooltip("Mesh Filter component that holds the generated mesh when drawing the field of view")] private MeshFilter viewMeshFilter;
+
+
     private Mesh viewMesh;
     private PlayerAttributesManager playerAttr;
 
@@ -42,13 +49,12 @@ public class FieldOfView : MonoBehaviour {
         viewMeshFilter.mesh = viewMesh;
 
         playerAttr = GetComponentInParent<PlayerAttributesManager>();
-        InitializeWithStats();
     }
     void OnEnable() {
         StartCoroutine("FindTargetsWithDelay", delayBetweenFOVUpdates);
     }
 
-    public void InitializeWithStats()
+    private void Update()
     {
         viewRadius = playerAttr.GetRadius();
         viewAngle = playerAttr.GetAngle();
@@ -95,6 +101,35 @@ public class FieldOfView : MonoBehaviour {
             oldViewCast = newViewCast;
         }
 
+        /* Calculate third eye field of view */
+        if (hasThirdEye)
+        {
+            for (int i = 0; i <= Mathf.RoundToInt(viewAngleThirdEye * meshResolution); i++)
+            {
+                //float angle = transform.eulerAngles.y - viewAngleThirdEye / 2 + (viewAngleThirdEye / Mathf.RoundToInt(viewAngleThirdEye * meshResolution)) * i;
+                ViewCastInfo newViewCast = ViewCast(transform.eulerAngles.y +180 - viewAngleThirdEye / 2 + (viewAngleThirdEye / Mathf.RoundToInt(viewAngleThirdEye * meshResolution)) * i, viewRadiusThirdEye);
+
+                if (i > 0)
+                {
+                    if (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit && newViewCast.hit && Mathf.Abs(oldViewCast.distance - newViewCast.distance) > edgeDstThreshold))
+                    {
+                        EdgeInfo edge = FindEdge(oldViewCast, newViewCast, viewRadiusThirdEye);
+                        if (edge.pointA != Vector3.zero)
+                        {
+                            viewPoints.Add(edge.pointA);
+                        }
+                        if (edge.pointB != Vector3.zero)
+                        {
+                            viewPoints.Add(edge.pointB);
+                        }
+                    }
+                }
+
+
+                viewPoints.Add(newViewCast.point);
+                oldViewCast = newViewCast;
+            }
+        }
 
         /* Calculate peripheral vision */
         if (hasPeripheralVision && viewAngle < 360) {
@@ -227,7 +262,20 @@ public class FieldOfView : MonoBehaviour {
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask) && dstToTarget < viewRadius) {
                     isInFOV = true;
                 }
-            } else if (hasPeripheralVision) {
+            }
+            else if (hasThirdEye)
+            {
+                //check if hideable should be hidden or not
+                if (Vector2.Angle(new Vector2(-transform.forward.x, -transform.forward.z), dirToTarget) < viewAngleThirdEye / 2)
+                {
+                    float dstToTarget = Vector3.Distance(transformPos, targetPos);
+                    if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask) && dstToTarget < viewRadiusThirdEye)
+                    {
+                        isInFOV = true;
+                    }
+                }
+            }
+            else if (hasPeripheralVision) {
                 float dstToTarget = Vector2.Distance(transformPos, targetPos);
                 // here we have to check the distance to the target since the peripheral vision may have a different radius than the normal field of view
                 if (dstToTarget < viewRadiusPeripheralVision && !Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask)) {
@@ -240,9 +288,9 @@ public class FieldOfView : MonoBehaviour {
             IHideable hideable = target.GetComponent<IHideable>();
             if (hideable != null) {
                 if (isInFOV) {
-                    target.GetComponent<IHideable>().OnFOVEnter();
+                    if (!hideable.isInFov) target.GetComponent<IHideable>().OnFOVEnter();
                 } else {
-                    target.GetComponent<IHideable>().OnFOVLeave();
+                    if (hideable.isInFov) target.GetComponent<IHideable>().OnFOVLeave();
                 }
             }
         }

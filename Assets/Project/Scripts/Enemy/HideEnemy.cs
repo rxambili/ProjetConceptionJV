@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HideEnemy : MonoBehaviour, IHideable
+public class HideEnemy : IHideable
 {
-
-
-    // Use this for initialization
+   
     void Awake()
     {
         Component[] meshComponents = GetComponentsInChildren(typeof(SkinnedMeshRenderer), true);
@@ -16,23 +14,23 @@ public class HideEnemy : MonoBehaviour, IHideable
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
-
-    public void OnFOVEnter()
+    public override void OnFOVEnter()
     {
+        base.OnFOVEnter();
+        Debug.Log("fovEnter");
         Component[] meshComponents = GetComponentsInChildren(typeof(SkinnedMeshRenderer), true);
         foreach (SkinnedMeshRenderer m in meshComponents)
         {
-            m.enabled = true;
+           m.enabled = true;
         }
+       
     }
 
-    public void OnFOVLeave()
+    public override void OnFOVLeave()
     {
+        base.OnFOVLeave();
+        Debug.Log("fovLeave");
         Component[] meshComponents = GetComponentsInChildren(typeof(SkinnedMeshRenderer), true);
         foreach (SkinnedMeshRenderer m in meshComponents)
         {
