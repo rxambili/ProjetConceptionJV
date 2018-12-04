@@ -961,6 +961,7 @@ GameObject:
   - component: {fileID: 114705802348455460}
   - component: {fileID: 114872698020432568}
   - component: {fileID: 114735405914037652}
+  - component: {fileID: 114728027250831106}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3351,6 +3352,17 @@ MonoBehaviour:
   multiplicateurReloadSpeed: 0.2
   factReloadAgi: 0.2
   factReloadTir: 0.8
+  bonusPV: 0
+  bonusResistance: 0
+  bonusSpeed: 0
+  bonusRadius: 0
+  bonusPeripheralRadius: 0
+  bonusAngle: 0
+  bonusAtkMelee: 0
+  bonusMeleeCriticalChance: 0
+  bonusTir: 0
+  bonusTirCriticalChance: 0
+  bonusReloadSpeed: 0
 --- !u!114 &114182282413974514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3445,6 +3457,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoText: {fileID: 0}
   startingTotalAmmo: 20
+--- !u!114 &114728027250831106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1753106052692918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8d733194f03324ca1056f1862633e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114735155585376940
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -17,3 +17,5 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 4cbd58538eb168445a066a91cf34b6e2, type: 3}
   genome:
   - {fileID: 11400000, guid: 24ed02fde94ebe3448dba13ca6bbac5a, type: 2}
+  traits:
+  - {fileID: 11400000, guid: 0c47fea76f065df408fb903ede14aea7, type: 2}

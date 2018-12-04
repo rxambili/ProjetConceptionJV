@@ -11,8 +11,9 @@ public class Personnage : ScriptableObject{
     public int age;
     public Sprite artwork;
     [SerializeField] public List<Gene> genome = new List<Gene>();
+    [SerializeField] public Trait[] traits;
 
-    [SerializeField] private Stats stats = new Stats();
+    private Stats stats = new Stats();
     private bool isDirty = true;
     
     public void AddGene(Gene g)

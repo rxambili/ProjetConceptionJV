@@ -42,60 +42,73 @@ public class PlayerAttributesManager : MonoBehaviour {
     [SerializeField, Range(0, 1), Tooltip("Reload Speed = Base Reload Speed + MultiplicateurReloadSpeed * (%agi * Agilité + %tir * atkTir)")] private float factReloadAgi = 0.5f;
     [SerializeField, Range(0, 1), Tooltip("Reload Speed = Base Reload Speed + MultiplicateurReloadSpeed * (%agi * Agilité + %tir * atkTir)")] private float factReloadTir = 0.5f;
 
+    [Space(5)]
+    [Header("Bonus/Malus")]
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusPV;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusResistance;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusSpeed;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusRadius;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusPeripheralRadius;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusAngle;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusAtkMelee;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusMeleeCriticalChance;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusTir;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusTirCriticalChance;
+    [SerializeField, Tooltip("Bonus/Malus en pourcentage")] private int bonusReloadSpeed;
 
     public int GetStartingHealth()
     {
-        return (int)(basePV + multiplicateurPV * GetConstitution());
+        return (int)((basePV + multiplicateurPV * GetConstitution()) * Mathf.Max(0f, 1f + bonusPV/100f));
     }
 
     public int GetResistance()
     {
-        return (int)(baseResistance + multiplicateurResistance * GetConstitution());
+        return (int)((baseResistance + multiplicateurResistance * GetConstitution()) * Mathf.Max(0f, 1f + bonusResistance / 100f));
     }
 
     public float GetSpeed()
     {
-        return baseSpeed + multiplicateurSpeed * GetAgilite();
+        return (baseSpeed + multiplicateurSpeed * GetAgilite()) * Mathf.Max(0f, 1f + bonusSpeed / 100f);
     }
 
     public float GetRadius()
     {
-        return baseRadius + multiplicateurRadius * GetPerception();
+        return (baseRadius + multiplicateurRadius * GetPerception()) * Mathf.Max(0f, 1f + bonusRadius / 100f);
     }
 
     public float GetPeripheralRadius()
     {
-        return basePeripheralRadius + multiplicateurPeripheralRadius * GetPerception();
+        return (basePeripheralRadius + multiplicateurPeripheralRadius * GetPerception()) * Mathf.Max(0f, 1f + bonusPeripheralRadius / 100f);
     }
 
     public float GetAngle()
     {
-        return baseAngle + multiplicateurAngle * GetPerception();
+        return (baseAngle + multiplicateurAngle * GetPerception()) * Mathf.Max(0f, 1f + bonusAngle / 100f);
     }
 
     public int GetAtkMelee()
     {
-        return (int)(baseMelee + multiplicateurMelee * GetMelee());
+        return (int)((baseMelee + multiplicateurMelee * GetMelee()) * Mathf.Max(0f, 1f + bonusAtkMelee / 100f));
     }
 
     public int GetMeleeCriticalChance()
     {
-        return (int)(baseMeleeCriticalChance + multiplicateurMeleeCriticalChance * GetMelee());
+        return (int)((baseMeleeCriticalChance + multiplicateurMeleeCriticalChance * GetMelee()) * Mathf.Max(0f, 1f + bonusMeleeCriticalChance / 100f));
     }
 
     public int GetAtkTir()
     {
-        return (int)(baseTir + multiplicateurTir * GetTir());
+        return (int)((baseTir + multiplicateurTir * GetTir()) * Mathf.Max(0f, 1f + bonusTir / 100f));
     }
     public int GetCriticalChance()
     {
-        return (int)(baseCriticalChance + multiplicateurCriticalChance * GetTir());
+        return (int)((baseCriticalChance + multiplicateurCriticalChance * GetTir()) * Mathf.Max(0f, 1f + bonusTirCriticalChance / 100f));
     }
 
 
     public float GetReloadSpeed()
     {
-        return baseReloadSpeed + multiplicateurReloadSpeed * (factReloadAgi * GetAgilite() + factReloadTir * GetTir());
+        return (baseReloadSpeed + multiplicateurReloadSpeed * (factReloadAgi * GetAgilite() + factReloadTir * GetTir())) * Mathf.Max(0f, 1f + bonusReloadSpeed / 100f);
     }
 
     public void SetConstitution(float number)
@@ -147,4 +160,60 @@ public class PlayerAttributesManager : MonoBehaviour {
     {
         return GameManager.instance.currentPlayerStats.tir;
     }
+
+    public void AddBonusStartingHealth(int amount)
+    {
+        bonusPV += amount;
+    }
+
+    public void AddBonusResistance(int amount)
+    {
+        bonusResistance += amount;
+    }
+
+    public void AddBonusSpeed(int amount)
+    {
+        bonusSpeed += amount;
+    }
+
+    public void AddBonusRadius(int amount)
+    {
+        bonusRadius += amount;
+    }
+
+    public void AddBonusPeripheralRadius(int amount)
+    {
+        bonusPeripheralRadius += amount;
+    }
+
+    public void AddBonusAngle(int amount)
+    {
+        bonusAngle += amount;
+    }
+
+    public void AddBonusAtkMelee(int amount)
+    {
+        bonusAtkMelee += amount;
+    }
+
+    public void AddBonusMeleeCriticalChance(int amount)
+    {
+        bonusMeleeCriticalChance += amount;
+    }
+
+    public void AddBonusTir(int amount)
+    {
+        bonusTir += amount;
+    }
+
+    public void AddBonusReloadSpeed(int amount)
+    {
+        bonusReloadSpeed += amount;
+    }
+
+    public void AddBonusTirCriticalChance(int amount)
+    {
+        bonusTirCriticalChance += amount;
+    }
+
 }

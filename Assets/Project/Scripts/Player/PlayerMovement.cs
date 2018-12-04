@@ -30,9 +30,9 @@ namespace GameProject
             playerAttr = GetComponent<PlayerAttributesManager>();
         }
 
-        private void Start()
+        private void Update()
         {
-            InitializeWithStats();
+            speed = playerAttr.GetSpeed();
         }
 
 
@@ -51,12 +51,7 @@ namespace GameProject
             // Animate the player.
             Animating(h, v);
         }
-
-        public void InitializeWithStats()
-        {
-            speed =  playerAttr.GetSpeed();
-        }
-
+        
 
         void Move(float h, float v)
         {

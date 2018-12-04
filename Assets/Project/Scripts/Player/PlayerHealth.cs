@@ -37,22 +37,18 @@ namespace GameProject
 
         private void Start()
         {
-            InitializeWithStats();
-        }
-
-        public void InitializeWithStats()
-        {
             // Set the initial health of the player.
-            startingHealth =  playerAttr.GetStartingHealth();
+            startingHealth = playerAttr.GetStartingHealth();
             currentHealth = startingHealth;
-
-            resistance = playerAttr.GetResistance();
         }
 
+        
         void Update ()
         {
+            startingHealth = playerAttr.GetStartingHealth();
+            resistance = playerAttr.GetResistance();
             // If the player has just been damaged...
-            if(damaged)
+            if (damaged)
             {
                 // ... set the colour of the damageImage to the flash colour.
                 damageImage.color = flashColour;

@@ -198,6 +198,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114177819319481408, guid: 66e7f485888d55a408b7dacc85fc5f59,
+        type: 2}
+      propertyPath: currentPlayerTraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d2c111b31a64954cb5dcb411b536360,
+        type: 2}
+    - target: {fileID: 114177819319481408, guid: 66e7f485888d55a408b7dacc85fc5f59,
+        type: 2}
+      propertyPath: currentPlayerTraits.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 43d247260eb4fe646ba0824cb2d96207,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e7f485888d55a408b7dacc85fc5f59, type: 2}
   m_IsPrefabAsset: 0
@@ -964,22 +976,6 @@ Prefab:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 1394906873}
-    - target: {fileID: 4799818790805806, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4314944138980544, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4093637283547778, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4502663810504262, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
   m_IsPrefabAsset: 0

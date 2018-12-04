@@ -51,5 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02823e460b5c7b4bb9d96c548b19fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPlayerTraits:
+  - {fileID: 11400000, guid: a952807513b262443a91113636c80454, type: 2}
+  - {fileID: 11400000, guid: 87bb72cf2fd3bf144b3630deaeaea260, type: 2}
+  - {fileID: 11400000, guid: dc8df2605e865974395ede440e69fd9c, type: 2}
+  - {fileID: 11400000, guid: d6bf22379c7e8ca47a2e34473f04339b, type: 2}
   survivants:
   - {fileID: 11400000, guid: 15248e413d0279a4c9943948835681f3, type: 2}

@@ -21,8 +21,8 @@ namespace GameProject {
         {
             if (Input.GetButtonDown("Action") && isInRange)
             {
-               playerRessources.AddAmmo(ammoAmount);
-               playerText.text = string.Format("+{0} balles", ammoAmount);
+               int addedAmount = playerRessources.AddAmmo(ammoAmount);
+               playerText.text = string.Format("+{0} balles", addedAmount);
                hudAnim.SetTrigger("AddAmmo");
                Destroy(gameObject);
             }

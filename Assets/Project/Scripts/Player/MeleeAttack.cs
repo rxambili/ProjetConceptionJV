@@ -26,20 +26,12 @@ namespace GameProject
 
             hitableMask = LayerMask.GetMask("Shootable");
         }
-        void Start()
-        {
-            InitializeWithStats();
-        }
-
-        public void InitializeWithStats()
-        {
-            damagePerHit = playerAttr.GetAtkMelee();
-            criticalChance = playerAttr.GetMeleeCriticalChance();
-        }
-
+        
         // Update is called once per frame
         void Update()
         {
+            damagePerHit = playerAttr.GetAtkMelee();
+            criticalChance = playerAttr.GetMeleeCriticalChance();
 
             timer += Time.deltaTime;
             if (isAuto)

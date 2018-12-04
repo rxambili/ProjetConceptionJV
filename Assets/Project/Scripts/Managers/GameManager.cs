@@ -6,8 +6,13 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;
+
+    // Player
     public Stats currentPlayerStats;
+    public Trait[] currentPlayerTraits;
+
     public Personnage[] survivants;
+    
 
     void Awake()
     {
