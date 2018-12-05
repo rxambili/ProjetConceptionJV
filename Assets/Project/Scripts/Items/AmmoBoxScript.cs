@@ -7,7 +7,7 @@ namespace GameProject {
     public class AmmoBoxScript : MonoBehaviour {
 
         public int ammoAmount;
-        public Text playerText;
+        public Text ammoAddText;
         public Animator hudAnim;
 
         RessourcesManager playerRessources;
@@ -22,7 +22,7 @@ namespace GameProject {
             if (Input.GetButtonDown("Action") && isInRange)
             {
                int addedAmount = playerRessources.AddAmmo(ammoAmount);
-               playerText.text = string.Format("+{0} balles", addedAmount);
+               ammoAddText.text = string.Format("+{0} balles", addedAmount);
                hudAnim.SetTrigger("AddAmmo");
                Destroy(gameObject);
             }
