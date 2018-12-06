@@ -53,3 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   survivants:
   - {fileID: 11400000, guid: 15248e413d0279a4c9943948835681f3, type: 2}
+  - {fileID: 11400000, guid: d1d5497711f76444ab1be72e024f7991, type: 2}
+  - {fileID: 11400000, guid: 4c98b9c2af9728941abf157b63f2c30c, type: 2}
+  - {fileID: 11400000, guid: 6f69fc63ede378347bf14047703f2d55, type: 2}
