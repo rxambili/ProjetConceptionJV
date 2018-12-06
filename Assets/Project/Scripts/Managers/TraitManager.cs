@@ -5,7 +5,7 @@ using UnityEngine;
 public class TraitManager : MonoBehaviour {
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
     {
 		foreach (Trait t in GameManager.instance.currentPlayerTraits)
         {

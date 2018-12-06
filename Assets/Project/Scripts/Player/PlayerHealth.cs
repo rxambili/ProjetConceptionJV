@@ -31,8 +31,6 @@ namespace GameProject
             anim = GetComponent <Animator> ();
             playerMovement = GetComponent <PlayerMovement> ();
             playerAttr = GetComponent<PlayerAttributesManager>();
-
-            
         }
 
         private void Start()
@@ -114,6 +112,19 @@ namespace GameProject
 
             // Turn off the movement and shooting scripts.
             playerMovement.enabled = false;
+        }
+
+        public int Heal(int amount)
+        {
+            int newHealth = Mathf.Min(startingHealth, currentHealth + amount);
+            Debug.Log(startingHealth);
+            int addedPv = newHealth - currentHealth;
+            currentHealth = newHealth;
+
+            // Set the health bar's value to the current health.
+            healthSlider.value = currentHealth;
+
+            return addedPv;
         }
 
 
