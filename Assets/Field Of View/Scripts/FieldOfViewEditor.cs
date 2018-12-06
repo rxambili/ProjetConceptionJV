@@ -16,6 +16,13 @@ public class FieldOfViewEditor : Editor {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("viewRadiusPeripheralVision"));
         }
 
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("hasThirdEye"));
+        if (fov.hasThirdEye)
+        {
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("viewRadiusThirdEye"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("viewAngleThirdEye"));
+        }
+
         EditorGUILayout.PropertyField(serializedObject.FindProperty("edgeResolveIterations"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("edgeDstThreshold"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("delayBetweenFOVUpdates"));

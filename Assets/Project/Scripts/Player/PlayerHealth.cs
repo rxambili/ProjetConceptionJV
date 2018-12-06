@@ -31,28 +31,22 @@ namespace GameProject
             anim = GetComponent <Animator> ();
             playerMovement = GetComponent <PlayerMovement> ();
             playerAttr = GetComponent<PlayerAttributesManager>();
-
-            
         }
 
         private void Start()
         {
-            InitializeWithStats();
-        }
-
-        public void InitializeWithStats()
-        {
             // Set the initial health of the player.
-            startingHealth =  playerAttr.GetStartingHealth();
+            startingHealth = playerAttr.GetStartingHealth();
             currentHealth = startingHealth;
-
-            resistance = playerAttr.GetResistance();
         }
 
+        
         void Update ()
         {
+            startingHealth = playerAttr.GetStartingHealth();
+            resistance = playerAttr.GetResistance();
             // If the player has just been damaged...
-            if(damaged)
+            if (damaged)
             {
                 // ... set the colour of the damageImage to the flash colour.
                 damageImage.color = flashColour;
@@ -118,6 +112,19 @@ namespace GameProject
 
             // Turn off the movement and shooting scripts.
             playerMovement.enabled = false;
+        }
+
+        public int Heal(int amount)
+        {
+            int newHealth = Mathf.Min(startingHealth, currentHealth + amount);
+            Debug.Log(startingHealth);
+            int addedPv = newHealth - currentHealth;
+            currentHealth = newHealth;
+
+            // Set the health bar's value to the current health.
+            healthSlider.value = currentHealth;
+
+            return addedPv;
         }
 
 

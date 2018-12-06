@@ -10,7 +10,8 @@ public class Personnage : ScriptableObject{
     public string description;
     public int age;
     public Sprite artwork;
-    public List<Gene> genome = new List<Gene>();
+    [SerializeField] public List<Gene> genome = new List<Gene>();
+    [SerializeField] public Trait[] traits;
 
     private Stats stats = new Stats();
     private bool isDirty = true;

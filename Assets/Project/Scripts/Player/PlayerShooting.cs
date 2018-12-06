@@ -52,21 +52,13 @@ namespace GameProject
             //faceLight = GetComponentInChildren<Light> ();
         }
 
-        private void Start()
-        {
-            InitializeWithStats();
-            currentAmmo = maxAmmo;
-        }
-
-        public void InitializeWithStats()
+        void Update ()
         {
             damagePerShot = playerAttr.GetAtkTir();
             reloadSpeed = playerAttr.GetReloadSpeed();
             criticalChance = playerAttr.GetCriticalChance();
             anim.SetFloat("ReloadSpeed", reloadSpeed);
-        }
-        void Update ()
-        {
+
             // Add the time since Update was last called to the timer.
             timer += Time.deltaTime;
 
