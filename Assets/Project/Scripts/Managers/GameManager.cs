@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     // Player
     public Stats currentPlayerStats;
     public Trait[] currentPlayerTraits;
+    public int nbOrbes;
 
     public Personnage[] survivants;
     

@@ -15,6 +15,7 @@ namespace GameProject
         public ParticleSystem criticalDeathParticles;
         public ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
 
+        public GameObject orbe;
 
         Animator anim;                              // Reference to the animator.
         CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
@@ -140,7 +141,7 @@ namespace GameProject
             enemyAudio.Play();
 
             head.SetActive(false);
-            hitParticles.Play();
+            criticalDeathParticles.Play();
 
             SetKinematic(false);
             GetComponent<Animator>().enabled = false;
@@ -154,6 +155,7 @@ namespace GameProject
                 }
 
             }
+            Instantiate(orbe, transform.position, Quaternion.identity);
             Destroy(gameObject, 2f);
         }
 
@@ -184,6 +186,7 @@ namespace GameProject
                 }
 
             }
+            Instantiate(orbe, transform.position, Quaternion.identity);
             Destroy(gameObject, 2f);
         }
         

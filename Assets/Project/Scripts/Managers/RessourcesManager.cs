@@ -7,6 +7,7 @@ namespace GameProject {
     public class RessourcesManager : MonoBehaviour {
 
         public Text ammoText;
+        public Text orbeText;
 
         public int startingTotalAmmo;
         private int bonusAmmo;
@@ -28,6 +29,7 @@ namespace GameProject {
             {
                 ammoText.text = "Illimité";
             }
+            orbeText.text = string.Format("{0} orbe{1}", GameManager.instance.nbOrbes, GameManager.instance.nbOrbes<=1 ? "" : "s");
         }
 
         public int UseAmmo(int ammo)
@@ -47,6 +49,12 @@ namespace GameProject {
         public void AddBonusAmmo(int amount)
         {
             bonusAmmo += amount;
+        }
+
+        public int AddOrbe(int amount)
+        {
+            GameManager.instance.nbOrbes += amount;
+            return amount;
         }
 
     }
