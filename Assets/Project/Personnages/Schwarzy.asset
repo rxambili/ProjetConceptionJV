@@ -15,4 +15,6 @@ MonoBehaviour:
   description: Aime tirer avec des grosses armes !
   age: 80
   artwork: {fileID: 21300000, guid: 32d26ac20a761004d89829864a266c43, type: 3}
-  genome: []
+  genome:
+  - {fileID: 11400000, guid: 31ce1ba5344a0bb458e9fea16d6107c9, type: 2}
+  traits: []

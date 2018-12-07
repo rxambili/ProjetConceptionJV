@@ -117,7 +117,6 @@ namespace GameProject
         public int Heal(int amount)
         {
             int newHealth = Mathf.Min(startingHealth, currentHealth + amount);
-            Debug.Log(startingHealth);
             int addedPv = newHealth - currentHealth;
             currentHealth = newHealth;
 
