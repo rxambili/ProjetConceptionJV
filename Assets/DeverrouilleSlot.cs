@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DeverrouilleSlot : MonoBehaviour {
-    public int orbes = 1500;
+    public int orbesNeeded = 100;
     public GameObject pauvreTxt;
     public GameObject pasPauvreTxt;
     public Transform AssemblyPanel;
@@ -16,10 +16,11 @@ public class DeverrouilleSlot : MonoBehaviour {
     }
     public void deverouilleSlot()
     {
-        if(orbes >= 1500)
+        int orbes = GameManager.instance.nbOrbes;
+        if(orbes >= orbesNeeded)
         {
             characterUi.nbSlot++;
-            orbes -= 1500;
+            orbes -= orbesNeeded;
             pasPauvreTxt1 = Instantiate(pasPauvreTxt, AssemblyPanel);
             Destroy(pasPauvreTxt1, 2);
         }
