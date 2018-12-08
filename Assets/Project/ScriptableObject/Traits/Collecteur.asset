@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Collecteur
   description: Sans Description
-  nbNeeded: 1
+  nbNeeded: 2
   bonusAmmo: 50

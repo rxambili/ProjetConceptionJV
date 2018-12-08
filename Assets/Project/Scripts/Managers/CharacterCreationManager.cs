@@ -51,16 +51,16 @@ public class CharacterCreationManager : MonoBehaviour
         listSurvivants = GameManager.instance.survivants;
         nbSlot = 3;
         cptSlot = 0;
+
+
         
-
-
         canvas = GetComponent<Canvas>();
         /*constitutionText.text = playerAttr.GetConstitution().ToString("F1");
         perceptionText.text = playerAttr.GetPerception().ToString("F1");
         meleeText.text = playerAttr.GetMelee().ToString("F1");
         tirText.text = playerAttr.GetTir().ToString("F1");
         pointsText.text = string.Format("Points Restant : {0:F1}", pointsRestants);*/
-        
+
         // Generation de la liste des genes des survivants
         for (int i = 0; i < listSurvivants.Length; i++)
         {
@@ -69,10 +69,11 @@ public class CharacterCreationManager : MonoBehaviour
 
             newSurvivorCard.transform.Find("CaracterImg").GetComponent<Image>().sprite = listSurvivants[i].getArtwork();
             newSurvivorCard.transform.Find("SurvivantNameImg").Find("SurvivantName").GetComponent<Text>().text = listSurvivants[i].getName();
+            newSurvivorCard.transform.Find("TextParent").Find("Txt5").GetComponent<Text>().text = listSurvivants[i].traits[0].name + "(1/"+ listSurvivants[i].traits[0].nbNeeded+")";
             bool rempli;
             bool P, C, A, T, M;
             P=C=A=T=M= false;
-            for(int j = 1; j < 5; j++)
+            for (int j = 1; j < 5; j++)
             {
                 rempli = false;
                 if (listSurvivants[i].genome[0].bonusPerception != 0 && !rempli && !P)
@@ -212,7 +213,7 @@ public class CharacterCreationManager : MonoBehaviour
             newGeneSlot.transform.Find("TextParent").Find("Txt2").GetComponent<Text>().text = currentSurvivorCard.Find("TextParent").Find("Txt2").GetComponent<Text>().text;
             newGeneSlot.transform.Find("TextParent").Find("Txt3").GetComponent<Text>().text = currentSurvivorCard.Find("TextParent").Find("Txt3").GetComponent<Text>().text;
             newGeneSlot.transform.Find("TextParent").Find("Txt4").GetComponent<Text>().text = currentSurvivorCard.Find("TextParent").Find("Txt4").GetComponent<Text>().text;
-            //newGeneSlot.transform.Find("TextParent").Find("Txt5").GetComponent<Text>().text = currentSurvivorCard.Find("TextParent").Find("Txt5").GetComponent<Text>().text;
+            newGeneSlot.transform.Find("TextParent").Find("Txt5").GetComponent<Text>().text = currentSurvivorCard.Find("TextParent").Find("Txt5").GetComponent<Text>().text;
             Destroy(currentSurvivorCard.gameObject, 0);
         }
     }
@@ -239,7 +240,7 @@ public class CharacterCreationManager : MonoBehaviour
         newSurvivorCard.transform.Find("TextParent").Find("Txt2").GetComponent<Text>().text = currentGeneSlot.Find("TextParent").Find("Txt2").GetComponent<Text>().text;
         newSurvivorCard.transform.Find("TextParent").Find("Txt3").GetComponent<Text>().text = currentGeneSlot.Find("TextParent").Find("Txt3").GetComponent<Text>().text;
         newSurvivorCard.transform.Find("TextParent").Find("Txt4").GetComponent<Text>().text = currentGeneSlot.Find("TextParent").Find("Txt4").GetComponent<Text>().text;
-        //newSurvivorCard.transform.Find("TextParent").Find("Txt5").GetComponent<Text>().text = currentGeneSlot.Find("TextParent").Find("Txt5").GetComponent<Text>().text;
+        newSurvivorCard.transform.Find("TextParent").Find("Txt5").GetComponent<Text>().text = currentGeneSlot.Find("TextParent").Find("Txt5").GetComponent<Text>().text;
         Destroy(currentGeneSlot.gameObject,0);
     }
     

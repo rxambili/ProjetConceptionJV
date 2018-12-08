@@ -114,7 +114,7 @@ public class PersonnageEditor : EditorWindow
                 //Mathf.Clamp (viewIndex, 1, perso.genome.Count);
                 EditorGUILayout.LabelField("of   " + perso.genome.Count.ToString() + "  genes", "", GUILayout.ExpandWidth(false));
                 GUILayout.EndHorizontal();
-
+               
                 perso.genome[viewIndex - 1].bonusConstitution = EditorGUILayout.FloatField("Constitution", perso.genome[viewIndex - 1].bonusConstitution);
                 perso.genome[viewIndex - 1].bonusAgilite = EditorGUILayout.FloatField("Agilité", perso.genome[viewIndex - 1].bonusAgilite);
                 perso.genome[viewIndex - 1].bonusPerception = EditorGUILayout.FloatField("Perception", perso.genome[viewIndex - 1].bonusPerception);

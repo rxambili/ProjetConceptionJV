@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 566e5a5404c50d14e9730cb3c52c3d7c, type: 3}
-  m_Name: Gene1
+  m_Name: Gene5
   m_EditorClassIdentifier: 
-  bonusPerception: 4
-  bonusAgilite: 4
-  bonusConstitution: 4
-  bonusTir: 4
+  bonusPerception: 0
+  bonusAgilite: 0
+  bonusConstitution: 0
+  bonusTir: 0
   bonusMelee: 0
