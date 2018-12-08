@@ -1,7 +1,9 @@
 fileFormatVersion: 2
-guid: f9dd479fbcb6cbf44889e6127ea3ce20
+guid: 773c0f19d27b7294f931d5ad9269a354
+timeCreated: 1516180970
+licenseType: Store
 ModelImporter:
-  serializedVersion: 23
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: CATRigHub001
     100002: CATRigHub002
@@ -109,19 +111,16 @@ ModelImporter:
     400100: //RootNode
     400102: Mesh_body
     400104: Mesh_eyes
-    2100000: mutant diffuse
     2300000: Mesh_eyes
     3300000: Mesh_eyes
     4300000: Mesh_body
     4300002: Mesh_eyes
     9500000: //RootNode
     13700000: Mesh_body
-  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -134,8 +133,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
-    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -160,15 +157,11 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-    preserveHierarchy: 0
-    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.0254
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -188,6 +181,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
