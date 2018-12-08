@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1411697947006772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.532939, y: 0.006062925, z: 0.99}
+  m_LocalPosition: {x: -1.0882945, y: 0.00000006207559, z: 2.212636}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoAmount: 20
-  playerText: {fileID: 0}
+  ammoAddText: {fileID: 0}
   hudAnim: {fileID: 0}
 --- !u!135 &135418234693580758
 SphereCollider:

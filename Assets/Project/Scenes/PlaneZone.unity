@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17972541, g: 0.22503558, b: 0.30654877, a: 1}
+  m_IndirectSpecularColor: {r: 0.17972502, g: 0.22503479, b: 0.3065475, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2961,16 +2961,6 @@ Prefab:
     - target: {fileID: 1562119382739742, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 2}
       propertyPath: m_Name
       value: Rock1 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 136887691656918972, guid: c07f24e35f07ce74ba43afa35d48adf7,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 64819107711435158, guid: c07f24e35f07ce74ba43afa35d48adf7,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 2}
@@ -8494,12 +8484,12 @@ Prefab:
     - target: {fileID: 114143332662364394, guid: 56ff31b95e575e9459c19417f5bd755a,
         type: 2}
       propertyPath: baseSpeed
-      value: 100
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114143332662364394, guid: 56ff31b95e575e9459c19417f5bd755a,
         type: 2}
       propertyPath: multiplicateurSpeed
-      value: 10
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56ff31b95e575e9459c19417f5bd755a, type: 2}
@@ -9403,7 +9393,7 @@ TerrainCollider:
   m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 32620d2a18d1d6543869088db9e2d1c5, type: 2}
-  m_EnableTreeColliders: 0
+  m_EnableTreeColliders: 1
 --- !u!218 &1564975843
 Terrain:
   m_ObjectHideFlags: 0

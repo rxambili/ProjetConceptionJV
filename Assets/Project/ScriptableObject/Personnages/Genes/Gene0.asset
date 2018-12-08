@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusPerception: 2.11
   bonusAgilite: 2.56
-  bonusConstitution: 0
+  bonusConstitution: 0.15
   bonusTir: 1.12
   bonusMelee: 0

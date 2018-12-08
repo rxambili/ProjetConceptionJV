@@ -15,4 +15,6 @@ MonoBehaviour:
   description: C'est pas ma guerre !
   age: 60
   artwork: {fileID: 21300000, guid: 14f277cba82d63c42b12899439cf899c, type: 3}
-  genome: []
+  genome:
+  - {fileID: 11400000, guid: 24ed02fde94ebe3448dba13ca6bbac5a, type: 2}
+  traits: []
