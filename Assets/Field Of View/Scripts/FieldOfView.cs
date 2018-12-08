@@ -257,9 +257,10 @@ public class FieldOfView : MonoBehaviour {
 
             //check if hideable should be hidden or not
             Vector2 dirToTarget = (targetPos - transformPos).normalized;
+            Vector3 dirToTarget3 = (target.position - transform.position).normalized;
             if (Vector2.Angle(new Vector2(transform.forward.x, transform.forward.z), dirToTarget) < viewAngle / 2) {
                 float dstToTarget = Vector3.Distance(transformPos, targetPos);
-                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask) && dstToTarget < viewRadius) {
+                if (!Physics.Raycast(transform.position, dirToTarget3, dstToTarget, obstacleMask) && dstToTarget < viewRadius) {
                     isInFOV = true;
                 }
             }
@@ -269,7 +270,7 @@ public class FieldOfView : MonoBehaviour {
                 if (Vector2.Angle(new Vector2(-transform.forward.x, -transform.forward.z), dirToTarget) < viewAngleThirdEye / 2)
                 {
                     float dstToTarget = Vector3.Distance(transformPos, targetPos);
-                    if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask) && dstToTarget < viewRadiusThirdEye)
+                    if (!Physics.Raycast(transform.position, dirToTarget3, dstToTarget, obstacleMask) && dstToTarget < viewRadiusThirdEye)
                     {
                         isInFOV = true;
                     }
@@ -278,7 +279,7 @@ public class FieldOfView : MonoBehaviour {
             else if (hasPeripheralVision) {
                 float dstToTarget = Vector2.Distance(transformPos, targetPos);
                 // here we have to check the distance to the target since the peripheral vision may have a different radius than the normal field of view
-                if (dstToTarget < viewRadiusPeripheralVision && !Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask)) {
+                if (dstToTarget < viewRadiusPeripheralVision && !Physics.Raycast(transform.position, dirToTarget3, dstToTarget, obstacleMask)) {
                     isInFOV = true;
                 }
             }

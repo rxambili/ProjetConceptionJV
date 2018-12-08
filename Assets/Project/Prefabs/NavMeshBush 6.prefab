@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4853224022667936}
   m_Layer: 0
-  m_Name: NavMeshBush 5
+  m_Name: NavMeshBush 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
