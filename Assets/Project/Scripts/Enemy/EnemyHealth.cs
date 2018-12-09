@@ -15,9 +15,10 @@ namespace GameProject
 
         public GameObject orbe;
 
-        Animator anim;                              // Reference to the animator.
-        CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
-        bool isDead;                                // Whether the enemy is dead.
+
+        protected Animator anim;                              // Reference to the animator.
+        protected CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
+        protected bool isDead;                                // Whether the enemy is dead.
         
 
 
@@ -37,7 +38,7 @@ namespace GameProject
         }
 
 
-        public void TakeDamage (int amount, Vector3 hitPoint, Vector3 hitDir)
+        public virtual void TakeDamage (int amount, Vector3 hitPoint, Vector3 hitDir)
         {
             // If the enemy is dead...
             if(isDead)
@@ -72,7 +73,7 @@ namespace GameProject
 
         
 
-        public void TakeDamage(int amount)
+        public virtual void TakeDamage(int amount)
         {
             // If the enemy is dead...
             if (isDead)
@@ -103,7 +104,7 @@ namespace GameProject
                 Death( Vector3.zero);
             }
         }
-        public void OneShot(Vector3 hitDir)
+        public virtual void OneShot(Vector3 hitDir)
         {
             // If the enemy is dead...
             if (isDead)
@@ -123,7 +124,7 @@ namespace GameProject
             }
         }        
 
-        void Death (Vector3 hitDir)
+        protected virtual void Death (Vector3 hitDir)
         {
             // The enemy is dead.
             isDead = true;
@@ -155,7 +156,7 @@ namespace GameProject
         }
         
        
-        void SetKinematic(bool newValue)
+        protected void SetKinematic(bool newValue)
         {
             Rigidbody[] bodies = GetComponentsInChildren<Rigidbody>();
             foreach (Rigidbody rb in bodies)

@@ -7,7 +7,7 @@ namespace GameProject
 { 
     public class PlayerHealth : MonoBehaviour
     {
-        private int startingHealth;                            // The amount of health the player starts the game with.
+        public int startingHealth;                            // The amount of health the player starts the game with.
         public int currentHealth;                                   // The current health the player has.
         public int resistance;
         public Slider healthSlider;                                 // Reference to the UI's health bar.

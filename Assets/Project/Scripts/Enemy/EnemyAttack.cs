@@ -10,12 +10,12 @@ namespace GameProject
         public float range = 2f;
         public int hitAngle = 90;
 
-        Animator anim;                              // Reference to the animator component.
-        GameObject player;                          // Reference to the player GameObject.
-        PlayerHealth playerHealth;                  // Reference to the player's health.
-        EnemyHealth enemyHealth;                    // Reference to this enemy's health.
-        bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
-        float timer;                                // Timer for counting up to the next attack.
+        protected Animator anim;                              // Reference to the animator component.
+        protected GameObject player;                          // Reference to the player GameObject.
+        protected PlayerHealth playerHealth;                  // Reference to the player's health.
+        protected EnemyHealth enemyHealth;                    // Reference to this enemy's health.
+        protected bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
+        protected float timer;                                // Timer for counting up to the next attack.
 
 
         void Awake ()
@@ -71,7 +71,7 @@ namespace GameProject
         }
 
 
-        void Attack ()
+        protected virtual void Attack ()
         {
             // Reset the timer.
             timer = 0f;
@@ -85,7 +85,7 @@ namespace GameProject
             }
         }
 
-        void InflictDamages()
+        protected virtual void InflictDamages()
         {
             // If the player has health to lose and is in range
             if (playerHealth.currentHealth > 0)

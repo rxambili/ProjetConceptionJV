@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
-  enemy: {fileID: 1138814181458190, guid: e712026463617b94ea461d7acba1cbad, type: 2}
-  spawnTime: 3
+  enemy: {fileID: 1315525712098392, guid: e3aa4f2543ec50f4196b5597503ad329, type: 2}
+  spawnTime: 10
   minDistance: 8
   maxDistance: 13
   player: {fileID: 0}

@@ -373,8 +373,8 @@ GameObject:
   - component: {fileID: 114407700398015638}
   - component: {fileID: 114220142198174236}
   - component: {fileID: 114718408699345778}
-  - component: {fileID: 114801866550774068}
-  - component: {fileID: 114669460887726878}
+  - component: {fileID: 114379515638723946}
+  - component: {fileID: 114687039484090484}
   - component: {fileID: 195241243239710936}
   m_Layer: 9
   m_Name: Creature_Slug
@@ -2488,6 +2488,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f58c1d9ce56e1749830b8aebe8ba3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114379515638723946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1315525712098392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf4090995278164b9700093593af50c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+  hurtClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
+  enemyAudio: {fileID: 82423651479933110}
+  deathIntensity: 1500
+  hitParticles: {fileID: 198847610746021652}
+  orbe: {fileID: 1965423881163304, guid: 74b677d01f5544d4c8fe268c19d2fcff, type: 2}
+  shoutingDamageMult: 2
 --- !u!114 &114384687013509856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2543,7 +2563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInFov: 0
---- !u!114 &114669460887726878
+--- !u!114 &114687039484090484
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2551,13 +2571,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1315525712098392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc28e8f7dbbe7494a8d67b6f5f3636bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1007b8645b7d8f849b73be2063b67eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 2
-  attackDamage: 15
-  range: 2.5
-  hitAngle: 120
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
+  range: 2
+  hitAngle: 90
+  rageTriggerPercent: 0.5
 --- !u!114 &114718408699345778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2569,25 +2590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea9a6ed18654d14db02bf0076cfe488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114801866550774068
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1315525712098392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa10cc87aff30c04dbe0aa648f5b6adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 50
-  currentHealth: 0
-  deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
-  hurtClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
-  enemyAudio: {fileID: 82423651479933110}
-  deathIntensity: 1500
-  hitParticles: {fileID: 198847610746021652}
-  orbe: {fileID: 1965423881163304, guid: 74b677d01f5544d4c8fe268c19d2fcff, type: 2}
 --- !u!135 &135161998216081076
 SphereCollider:
   m_ObjectHideFlags: 1
