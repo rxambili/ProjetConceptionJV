@@ -11,7 +11,7 @@ namespace GameProject
         public int currentHealth;                                   // The current health the player has.
         public int resistance;
         public Slider healthSlider;                                 // Reference to the UI's health bar.
-        public AudioClip hurtClip;
+        public AudioClip[] hurtClips;
         public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
         public AudioClip deathClip;                                 // The audio clip to play when the player dies.
         public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
@@ -74,16 +74,15 @@ namespace GameProject
             // Set the health bar's value to the current health.
             healthSlider.value = currentHealth;
 
-            // Play the hurt sound effect.
             if (playerAudio.isPlaying)
             {
                 playerAudio.Stop();
             }
-            playerAudio.clip = hurtClip;
-            playerAudio.Play ();
+            playerAudio.clip = hurtClips[Random.Range(0, hurtClips.Length - 1)];
+            playerAudio.Play();
 
             // If the player has lost all it's health and the death flag hasn't been set yet...
-            if(currentHealth <= 0 && !isDead)
+            if (currentHealth <= 0 && !isDead)
             {
                 // ... it should die.
                 Death ();

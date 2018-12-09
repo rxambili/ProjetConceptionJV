@@ -46,13 +46,6 @@ namespace GameProject
                 return;
 
             anim.SetTrigger("Hit");
-            // Play the hurt sound effect.
-            if (enemyAudio.isPlaying)
-            {
-                enemyAudio.Stop();
-            }
-            enemyAudio.clip = hurtClip;
-            enemyAudio.Play ();
 
             // Reduce the current health by the amount of damage sustained.
             currentHealth -= amount;
@@ -81,14 +74,7 @@ namespace GameProject
                 return;
 
             anim.SetTrigger("Hit");
-            // Play the hurt sound effect.
-            if (enemyAudio.isPlaying)
-            {
-                enemyAudio.Stop();
-            }
-            enemyAudio.clip = hurtClip;
-            enemyAudio.Play();
-
+            
             // Reduce the current health by the amount of damage sustained.
             currentHealth -= amount;
 
@@ -112,7 +98,8 @@ namespace GameProject
                 return;
             
             currentHealth = 0;
-            
+            anim.SetTrigger("Hit");
+
             // And play the particles.
             hitParticles.Play();
 
