@@ -2883,7 +2883,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efcae097f26f0448a29a8687b7bd9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbes: 1500
+  orbesNeeded: 100
+  pauvreTxt: {fileID: 0}
+  pasPauvreTxt: {fileID: 0}
+  AssemblyPanel: {fileID: 0}
 --- !u!114 &114421765632007550
 MonoBehaviour:
   m_ObjectHideFlags: 1

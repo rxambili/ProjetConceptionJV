@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoAmount: 20
-  playerText: {fileID: 0}
+  ammoAddText: {fileID: 0}
   hudAnim: {fileID: 0}
 --- !u!114 &114281560458400810
 MonoBehaviour:

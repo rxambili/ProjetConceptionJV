@@ -12,6 +12,7 @@ namespace GameProject
         public float range = 2f;
         public int hitAngle = 90;
         public int criticalChance = 1;
+        public float criticalMult = 2;
         public bool isAuto;
 
         float timer;
@@ -66,7 +67,7 @@ namespace GameProject
                 int rnd = Random.Range(1, 100);
                 if (rnd <= criticalChance)
                 {
-                    enemyHealth.TakeCriticalDamage(Vector3.zero);
+                    enemyHealth.TakeDamage((int) (damagePerHit * criticalMult));
                 }
                 else
                 {

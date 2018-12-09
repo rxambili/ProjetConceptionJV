@@ -626,6 +626,8 @@ MonoBehaviour:
   range: 100
   maxAmmo: 10
   currentAmmo: 0
+  reloadSpeed: 1
+  criticalChance: 1
   isAuto: 0
   emptyGunClip: {fileID: 8300000, guid: fa9122ed827d66e4ca928006ea65be4c, type: 3}
   shootClip: {fileID: 8300000, guid: fa7f046ce321d4021b5e753bf1152916, type: 3}

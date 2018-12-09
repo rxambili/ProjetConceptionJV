@@ -96,6 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac6305d0ce835f4898bd7298720092c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagePerHit: 0
+  timeBetweenHits: 1
+  range: 2
+  hitAngle: 90
+  criticalChance: 1
+  isAuto: 0
 --- !u!136 &136123234084735392
 CapsuleCollider:
   m_ObjectHideFlags: 1

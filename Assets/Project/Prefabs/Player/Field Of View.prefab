@@ -370,6 +370,9 @@ MonoBehaviour:
   viewAngle: 87
   hasPeripheralVision: 1
   viewRadiusPeripheralVision: 1.85
+  hasThirdEye: 0
+  viewRadiusThirdEye: 3
+  viewAngleThirdEye: 60
   edgeResolveIterations: 1
   edgeDstThreshold: 0
   delayBetweenFOVUpdates: 0.2

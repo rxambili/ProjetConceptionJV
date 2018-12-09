@@ -12,6 +12,7 @@ namespace GameProject
         public int currentAmmo = 0;
         public float reloadSpeed = 1f;
         public int criticalChance = 1;
+        public float criticalMult = 2;
         public bool isAuto;
         public AudioClip emptyGunClip;
         public AudioClip shootClip;
@@ -164,7 +165,7 @@ namespace GameProject
                     int rnd = Random.Range(1, 100);
                     if (rnd <= criticalChance)
                     {
-                        enemyHealth.TakeCriticalDamage(shootRay.direction);
+                        enemyHealth.TakeDamage((int) (damagePerShot * criticalMult), shootHit.point, shootRay.direction);
                     }
                     else
                     {
