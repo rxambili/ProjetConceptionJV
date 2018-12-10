@@ -18,4 +18,4 @@ MonoBehaviour:
   genome:
   - {fileID: 11400000, guid: 3ed2cca4a2c93094886493d107755166, type: 2}
   traits:
-  - {fileID: 11400000, guid: 0a601403ae1453e4f88a52088de81da9, type: 2}
+  - {fileID: 11400000, guid: ab2b40952a766c644a0e438277e35174, type: 2}

@@ -32,10 +32,28 @@ public class CharacterCreationManager : MonoBehaviour
     public GameObject ErrMsg;
     GameObject newErrMsg;
 
+    //Traits
+    public Trait Achromatopsie;
+    public Trait CoeurDeBoeuf;
+    public Trait Collecteur;
+    public Trait Combattant;
+    public Trait Daltonien1;
+    public Trait Daltonien2;
+    public Trait Daltonien3;
+    public Trait Fragile;
+    public Trait MauvaisCollecteur;
+    public Trait Myope;
+    public Trait OeilDeFaucon;
+    public Trait Sourd;
+    public Trait PeauDure;
+    public Trait Rechargement;
+    public Trait TireurElite;
+    public Trait EyeBack;
+    public Trait Moonwalker;
+    public Trait MouDuCul;
+    Trait[] AllTraits = new Trait[18]; 
 
- 
 
-    
 
     public int nbSlot;
     int cptSlot;
@@ -44,16 +62,34 @@ public class CharacterCreationManager : MonoBehaviour
     {
         playerAttr = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributesManager>();
     }*/
-    
+
     void Start()
     {
-       
+
         listSurvivants = GameManager.instance.survivants;
         nbSlot = 3;
         cptSlot = 0;
 
+        AllTraits[0] = Achromatopsie;
+        AllTraits[1] = CoeurDeBoeuf;
+        AllTraits[2] = Collecteur;
+        AllTraits[3] = Combattant;
+        AllTraits[4] = Daltonien1;
+        AllTraits[5] = Fragile;
+        AllTraits[6] = MauvaisCollecteur;
+        AllTraits[7] = Myope;
+        AllTraits[8] = OeilDeFaucon;
+        AllTraits[9] = Sourd;
+        AllTraits[10] = PeauDure;
+        AllTraits[11] = Rechargement;
+        AllTraits[12] = TireurElite;
+        AllTraits[13] = EyeBack;
+        AllTraits[14] = MouDuCul;
+        AllTraits[15] = Moonwalker;
+        AllTraits[16] = Daltonien2;
+        AllTraits[17] = Daltonien3;
 
-        
+
         canvas = GetComponent<Canvas>();
         /*constitutionText.text = playerAttr.GetConstitution().ToString("F1");
         perceptionText.text = playerAttr.GetPerception().ToString("F1");
@@ -120,12 +156,34 @@ public class CharacterCreationManager : MonoBehaviour
 
     public void Validate()
     {
+        //STATS
         Transform StatsPanel = AssemblyPanel.transform.Find("TotalStatsPanel");
         playerAttr.SetPerception(float.Parse(StatsPanel.Find("PerceptionTxt").Find("PerceptionTot").GetComponent<Text>().text));
         playerAttr.SetConstitution(float.Parse(StatsPanel.Find("ConstitutionTxt").Find("ConstitutionTot").GetComponent<Text>().text));
         playerAttr.SetAgilite(float.Parse(StatsPanel.Find("AgiliteTxt").Find("AgiliteTot").GetComponent<Text>().text));
         playerAttr.SetTir(float.Parse(StatsPanel.Find("TirTxt").Find("TirTot").GetComponent<Text>().text));
         playerAttr.SetMelee(float.Parse(StatsPanel.Find("MeleeTxt").Find("MeleeTot").GetComponent<Text>().text));
+        //TRAITS
+        Transform TraitsPanel = AssemblyPanel.transform.Find("TotalTraitsPanel");
+        string trait;
+        int num = 0;
+        for(int w = 1; w < 5; w++)
+        {
+            if((trait = TraitsPanel.Find("TraitSlot" + w).GetComponent<Text>().text) != "")
+            {
+                trait = trait.Substring(2);
+                for (int n = 0; n < AllTraits.Length; n++)
+                {
+                    if (trait == AllTraits[n].name)
+                    {
+                        GameManager.instance.currentPlayerTraits[num] = AllTraits[n];
+                        num++;
+                    }
+                }
+            }
+
+        }
+        
         SceneManager.LoadScene(1);
     }
 

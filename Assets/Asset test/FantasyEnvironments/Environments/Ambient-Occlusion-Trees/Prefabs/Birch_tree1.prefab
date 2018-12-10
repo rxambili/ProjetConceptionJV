@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23320235798237312}
   - component: {fileID: 136367590879483440}
   - component: {fileID: 136373081077970352}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Birch_tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
