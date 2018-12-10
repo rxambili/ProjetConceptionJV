@@ -3514,9 +3514,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 154d32e36bbd0c9489be3d6fe181c3ff, type: 3}
   - {fileID: 8300000, guid: 108b1221ea3922d498cf0c5d719beac1, type: 3}
   - {fileID: 8300000, guid: 585d805a53336f34c8ff32d9b746eeff, type: 3}
-  - {fileID: 8300000, guid: a46f1dc0ee0469e47be3440659dc65df, type: 3}
-  - {fileID: 8300000, guid: 5afba2074a60bd344ae81db8105e295b, type: 3}
-  - {fileID: 8300000, guid: 0dcbae9a4285a5c459f4aa0c76d278d3, type: 3}
   damageImage: {fileID: 0}
   deathClip: {fileID: 8300000, guid: 612c584e1a85cb443b689989dec3adbc, type: 3}
   flashSpeed: 5

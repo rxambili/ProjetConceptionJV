@@ -243,14 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: dd1ad72b6d817c14f8201205a9266ebc, type: 3}
-  - {fileID: 8300000, guid: cebddd780c1b6bb418ac3dedfa3c3c55, type: 3}
-  - {fileID: 8300000, guid: fba4f7a578fbdab43a18429fe3b98aad, type: 3}
   - {fileID: 8300000, guid: 256337d32bd3e554bac545b957cad44c, type: 3}
   - {fileID: 8300000, guid: ab8f960bbde46c541bff9aa3aae0376a, type: 3}
-  - {fileID: 8300000, guid: 7f78af90d998e8a4ead293f375e4a7bf, type: 3}
-  - {fileID: 8300000, guid: 4c0b4907cfee462448e866cfcd20aed9, type: 3}
-  - {fileID: 8300000, guid: 940ab3c4079b1a945b26afc692a5f4e5, type: 3}
-  - {fileID: 8300000, guid: ec13dc3de144f864d81ea3dcbb9258d9, type: 3}
 --- !u!114 &114030693192351230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -296,6 +290,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114808693670737132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1c8961db4c20144a527bee43b49485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114898134699420214
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -807,7 +812,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101474263109063322}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 114898134699420214}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
