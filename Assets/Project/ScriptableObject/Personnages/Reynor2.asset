@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d520276db6007e4c85efd3e6aa32684, type: 3}
-  m_Name: Reynor
+  m_Name: Reynor2
   m_EditorClassIdentifier: 
-  name: Reynor
+  name: Reynor2
   description: Aime casser du Zerg
   age: 28
   artwork: {fileID: 21300000, guid: 4dbce23e71db0654c8eb1e06af88ecaf, type: 3}

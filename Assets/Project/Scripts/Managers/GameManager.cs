@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     // Player
     public Stats currentPlayerStats;
-    public Trait[] currentPlayerTraits;
+    public List<Trait> currentPlayerTraits;
     public int nbOrbes;
 
     public Personnage[] survivants;
@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         currentPlayerStats = new Stats();
-        
+        currentPlayerTraits = new List<Trait>();
+
+
     }
 }

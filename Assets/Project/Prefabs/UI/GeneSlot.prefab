@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 224410875054197538}
   - component: {fileID: 222491445797325140}
   - component: {fileID: 114942353198820918}
+  - component: {fileID: 114549460064893560}
   m_Layer: 5
   m_Name: GeneSlot
   m_TagString: Untagged
@@ -418,6 +419,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &114549460064893560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590061077724406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88967cdcc4cd1f3428882484f6c107b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114609265372115684
 MonoBehaviour:
   m_ObjectHideFlags: 1
