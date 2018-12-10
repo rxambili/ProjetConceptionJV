@@ -23,7 +23,6 @@ namespace GameProject
 
         protected override void Death(Vector3 hitDir)
         {
-            Debug.Log("COUCOU");
             // The enemy is dead.
             isDead = true;
 
