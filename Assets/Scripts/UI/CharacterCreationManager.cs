@@ -32,7 +32,6 @@ public class CharacterCreationManager : MonoBehaviour
     {
 
         listSurvivants = GameManager.instance.survivants;
-        nbSlot = 3;
         cptSlot = 0;
 
         // Generation de la liste des genes des survivants
@@ -47,7 +46,7 @@ public class CharacterCreationManager : MonoBehaviour
     }
     private void Update()
     {
-        AssemblyPanel.transform.Find("TxtNbSlotRestant").GetComponent<Text>().text = "Nombre de slots restants : " + (nbSlot - cptSlot);
+        AssemblyPanel.transform.Find("TxtNbSlotRestant").GetComponent<Text>().text = "Nombre de slots restants : " + (GameManager.instance.nbSlots - cptSlot);
     }
 
     public void Validate()
@@ -68,7 +67,7 @@ public class CharacterCreationManager : MonoBehaviour
 
     public void AjouterGene(GameObject buttonAdd)
     {
-        if (cptSlot >= nbSlot)
+        if (cptSlot >= GameManager.instance.nbSlots)
         {
            
             newErrMsg = Instantiate(ErrMsg, AssemblyPanel);

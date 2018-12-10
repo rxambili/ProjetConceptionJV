@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Stats currentPlayerStats;
     public List<Trait> currentPlayerTraits;
     public int nbOrbes;
+    public int nbSlots = 3;
 
     public Personnage[] survivants;
     
