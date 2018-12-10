@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeverrouilleSlot : MonoBehaviour {
     public int orbesNeeded = 100;
@@ -13,6 +14,7 @@ public class DeverrouilleSlot : MonoBehaviour {
     void Start()
     {
         characterUi = GetComponentInParent<CharacterCreationManager>();
+        transform.GetComponentInChildren<Text>().text = string.Format("Ajouter un slot\n({0})", orbesNeeded);
     }
     public void deverouilleSlot()
     {
