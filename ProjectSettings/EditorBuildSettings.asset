@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/CharacterCreation.unity
     guid: a27ca6b38fcfbf5469106dc050ab134f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/Exploration.unity
     guid: 874e24e631d7345b0a29cc297bedb405
+  - enabled: 1
+    path: Assets/Project/Scenes/PlaneZone.unity
+    guid: 7fe4dd106e0f23544bfd3590583c8b89
   m_configObjects: {}
