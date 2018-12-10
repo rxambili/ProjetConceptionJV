@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
-  enemy: {fileID: 1364298289592036, guid: 4dfd7ab4d25a4564abd5f77a45e06fb1, type: 2}
+  enemy: {fileID: 1939307879047952, guid: 4dfd7ab4d25a4564abd5f77a45e06fb1, type: 2}
   spawnTime: 10
   minDistance: 8
   maxDistance: 13
