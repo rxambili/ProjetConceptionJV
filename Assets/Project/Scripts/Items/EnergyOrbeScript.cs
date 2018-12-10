@@ -23,7 +23,6 @@ public class EnergyOrbeScript : MonoBehaviour {
         _renderer = GetComponent<Renderer>();
         ps = GetComponentInChildren <ParticleSystem>();
         playerRessources = GameObject.FindGameObjectWithTag("Player").GetComponent<RessourcesManager>();
-
         var main = ps.main;
         main.duration = spawnEffectTime;
 

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace GameProject
 {
@@ -7,8 +8,14 @@ namespace GameProject
         public PlayerHealth playerHealth;       // Reference to the player's heatlh.
         public GameObject enemy;                // The enemy prefab to be spawned.
         public float spawnTime = 3f;            // How long between each spawn.
-        public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
+        public float minDistance;
+        public float maxDistance;
+        public Transform player;
 
+        private void Awake()
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
 
         void Start ()
         {
@@ -25,12 +32,15 @@ namespace GameProject
                 // ... exit the function.
                 return;
             }
-
+            
             // Find a random index between zero and one less than the number of spawn points.
-            int spawnPointIndex = Random.Range (0, spawnPoints.Length);
+            int angle = Random.Range (0, 360);
+            float distance = Random.Range(minDistance, maxDistance);
 
+            Vector3 pos = new Vector3(distance * Mathf.Cos(angle * Mathf.Deg2Rad), 0f, distance * Mathf.Sin(angle * Mathf.Deg2Rad));
+            
             // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
-            Instantiate (enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            Instantiate (enemy, player.position + pos, Quaternion.identity);
         }
     }
 }
