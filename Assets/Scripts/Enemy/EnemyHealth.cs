@@ -138,6 +138,8 @@ namespace GameProject
 
             }
             Destroy(gameObject, 2.5f);
+            Invoke("SpawnOrbe", 2f);
+
         }
         
        
@@ -150,17 +152,10 @@ namespace GameProject
             }
         }
 
-        void OnApplicationQuit()
+        protected void SpawnOrbe()
         {
-            isQuitting = true;
+            Instantiate(orbe, transform.position, Quaternion.identity);
         }
 
-        private void OnDestroy()
-        {
-            if (!isQuitting)
-            {
-                Instantiate(orbe, transform.position, Quaternion.identity);
-            }
-        }
     }
 }

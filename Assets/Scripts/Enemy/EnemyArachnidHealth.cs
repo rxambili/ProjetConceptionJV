@@ -37,6 +37,7 @@ namespace GameProject
             enemyAudio.Play();
                         
             Destroy(gameObject, 2.5f);
+            Invoke("SpawnOrbe", 2f);
         }
         
     }
