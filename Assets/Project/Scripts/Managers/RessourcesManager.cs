@@ -29,7 +29,7 @@ namespace GameProject {
             {
                 ammoText.text = "Illimité";
             }
-            orbeText.text = string.Format("{0} orbe{1}", GameManager.instance.nbOrbes, GameManager.instance.nbOrbes<=1 ? "" : "s");
+            orbeText.text = string.Format("{0} ", GameManager.instance.nbOrbes);
         }
 
         public int UseAmmo(int ammo)
