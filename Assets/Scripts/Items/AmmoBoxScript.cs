@@ -7,14 +7,16 @@ namespace GameProject {
     public class AmmoBoxScript : MonoBehaviour {
 
         public int ammoAmount;
-        public Text ammoAddText;
-        public Animator hudAnim;
+        private Text ammoAddText;
+        private Animator hudAnim;
 
         RessourcesManager playerRessources;
         bool isInRange;
         // Use this for initialization
         void Awake() {
             playerRessources = GameObject.FindGameObjectWithTag("Player").GetComponent<RessourcesManager>();
+            ammoAddText = GameObject.FindGameObjectWithTag("HUD").transform.Find("AmmoUI").Find("AmmoAddText").GetComponent<Text>();
+            hudAnim = GameObject.FindGameObjectWithTag("HUD").GetComponent<Animator>();
         }
 
         private void Update()
