@@ -35,11 +35,9 @@ namespace GameProject
             // Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
             enemyAudio.clip = deathClip;
             enemyAudio.Play();
-
-            
-            Instantiate(orbe, transform.position, Quaternion.identity);
-            Destroy(gameObject, 2f);
+                        
+            Destroy(gameObject, 2.5f);
         }
-
+        
     }
 }

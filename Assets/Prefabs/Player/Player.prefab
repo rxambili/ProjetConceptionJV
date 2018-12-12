@@ -3442,7 +3442,7 @@ MonoBehaviour:
   hitAngle: 90
   criticalChance: 1
   criticalMult: 2
-  isAuto: 0
+  isAuto: 1
 --- !u!114 &114143332662364394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3457,7 +3457,7 @@ MonoBehaviour:
   basePV: 50
   multiplicateurPV: 10
   baseResistance: 0
-  multiplicateurResistance: 2
+  multiplicateurResistance: 5
   baseSpeed: 2
   multiplicateurSpeed: 0.15
   baseRadius: 5

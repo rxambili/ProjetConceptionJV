@@ -19,8 +19,7 @@ namespace GameProject
         protected Animator anim;                              // Reference to the animator.
         protected CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
         protected bool isDead;                                // Whether the enemy is dead.
-        
-
+        private bool isQuitting = false;
 
         void Awake ()
         {
@@ -138,8 +137,7 @@ namespace GameProject
                 }
 
             }
-            Instantiate(orbe, transform.position, Quaternion.identity);
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 2.5f);
         }
         
        
@@ -149,6 +147,19 @@ namespace GameProject
             foreach (Rigidbody rb in bodies)
             {
                 rb.isKinematic = newValue;
+            }
+        }
+
+        void OnApplicationQuit()
+        {
+            isQuitting = true;
+        }
+
+        private void OnDestroy()
+        {
+            if (!isQuitting)
+            {
+                Instantiate(orbe, transform.position, Quaternion.identity);
             }
         }
     }
