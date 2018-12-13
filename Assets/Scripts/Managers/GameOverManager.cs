@@ -36,7 +36,7 @@ namespace GameProject
             if (Input.GetButton("Fire1") && isOver)
             {
                 GameManager.instance.currentPlayerStats.Reset();
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(2);
             }
         }
     }
