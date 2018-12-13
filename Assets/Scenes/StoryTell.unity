@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -120,6 +120,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114569243163974346, guid: ecfc048c2134fb64aaf3082fd508b1f7,
+        type: 2}
+      propertyPath: texts.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 224586166942148666, guid: ecfc048c2134fb64aaf3082fd508b1f7,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -210,6 +215,58 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114512349686364026, guid: ecfc048c2134fb64aaf3082fd508b1f7,
+        type: 2}
+      propertyPath: m_Text
+      value: Story
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569243163974346, guid: ecfc048c2134fb64aaf3082fd508b1f7,
+        type: 2}
+      propertyPath: texts.Array.data[3]
+      value: "Chaque survivant cr\xE9\xE9 est une bouche de plus \xE0 nourrir, il
+        faut donc qu'ils soient le plus efficace possible dans la collecte des ressources
+        n\xE9cessaires \xE0 la survie de l'humanit\xE9.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569243163974346, guid: ecfc048c2134fb64aaf3082fd508b1f7,
+        type: 2}
+      propertyPath: texts.Array.data[4]
+      value: Vraiment vraiment la merde
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569243163974346, guid: ecfc048c2134fb64aaf3082fd508b1f7,
+        type: 2}
+      propertyPath: texts.Array.data[0]
+      value: "Apr\xE8s les 5 ann\xE9es de guerre sanglante qui ont suivi l'invasion
+        de la Terre par une race unifi\xE9e sous une conscience collective dirig\xE9e
+        par une reine, il ne reste rien de l'humanit\xE9..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569243163974346, guid: ecfc048c2134fb64aaf3082fd508b1f7,
+        type: 2}
+      propertyPath: texts.Array.data[1]
+      value: "Les derniers survivants se sont regroup\xE9s dans le massif central
+        de l'ancienne France, un des rares endroits qui n'aient pas \xE9t\xE9 balay\xE9s
+        par les t\xEAtes nucl\xE9aires. Ils survivent au sein d'une forteresse gr\xE2ce
+        \xE0 une puissante machine qui a vu le jour lors des premi\xE8res ann\xE9es
+        de guerre..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569243163974346, guid: ecfc048c2134fb64aaf3082fd508b1f7,
+        type: 2}
+      propertyPath: texts.Array.data[2]
+      value: "Elle contient les informations g\xE9n\xE9tiques des survivants et permet
+        d'en cr\xE9er \xE0 l'\xE2ge adulte en quelques jours.  Bien qu'une petite
+        partie soit fonctionnelle, il est possible de l'am\xE9liorer en utilisant
+        des orbes d'\xE9nergies trouv\xE9es en dehors du bastion pour l'alimenter."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569243163974346, guid: ecfc048c2134fb64aaf3082fd508b1f7,
+        type: 2}
+      propertyPath: textDuration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512349686364026, guid: ecfc048c2134fb64aaf3082fd508b1f7,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1d6ae177878306945b08d89279b777dd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecfc048c2134fb64aaf3082fd508b1f7, type: 2}
   m_IsPrefabAsset: 0
@@ -274,6 +331,131 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &877006357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877006359}
+  - component: {fileID: 877006358}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &877006358
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 877006357}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 8434b04884c414ac6b468e10945685e6,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 51c3d3db6ee741943a4ec956284d5eef, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &877006359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 877006357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 713.57306, y: 430.24414, z: -521.00134}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097307736
 GameObject:
