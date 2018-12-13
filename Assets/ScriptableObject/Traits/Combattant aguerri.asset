@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034bf711a8ce2b94ea460120a1fda0bc, type: 3}
   m_Name: Combattant aguerri
   m_EditorClassIdentifier: 
-  name: Combattant aguerri
+  name: Combattant
   description: Sans Description
   nbNeeded: 1
   bonusPV: 0

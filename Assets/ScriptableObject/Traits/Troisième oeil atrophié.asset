@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8153de06b117e5439ae3413b703a5a1, type: 3}
   m_Name: "Troisi\xE8me oeil atrophi\xE9"
   m_EditorClassIdentifier: 
-  name: "Troisi\xE8me oeil atrophi\xE9"
+  name: "6\xE8me sens"
   description: Sans Description
   nbNeeded: 2
   viewRadius: 3

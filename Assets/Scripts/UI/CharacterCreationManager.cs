@@ -27,6 +27,7 @@ public class CharacterCreationManager : MonoBehaviour
     public int nbSlot;
     int cptSlot;
 
+    public GameObject DescriptionPanel;
 
     void Start()
     {
@@ -102,7 +103,14 @@ public class CharacterCreationManager : MonoBehaviour
 
         Destroy(currentGeneSlot.gameObject,0);
     }
-    
+    public void OpenDescription()
+    {
+        DescriptionPanel.SetActive(true);
+    }
+    public void CloseDescription()
+    {
+        DescriptionPanel.SetActive(false);
+    }
 }
 
 

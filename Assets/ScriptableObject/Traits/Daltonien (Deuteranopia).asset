@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d8fbc0b8488b9418cacfcd4d8fb69b, type: 3}
   m_Name: Daltonien (Deuteranopia)
   m_EditorClassIdentifier: 
-  name: Daltonien (Protanopia)
+  name: Protanopia1
   description: Sans Description
   nbNeeded: 1
   type: 2

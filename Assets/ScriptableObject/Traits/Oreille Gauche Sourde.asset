@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f03c22e9f964b499d35a2327b70095, type: 3}
   m_Name: Oreille Gauche Sourde
   m_EditorClassIdentifier: 
-  name: Oreille droite sourde
+  name: Sourd(G)
   description: Sans Description
   nbNeeded: 2
-  left: 0
+  left: 1
