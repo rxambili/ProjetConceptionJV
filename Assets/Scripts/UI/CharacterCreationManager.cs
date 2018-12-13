@@ -51,7 +51,7 @@ public class CharacterCreationManager : MonoBehaviour
 
     public void Validate()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     
