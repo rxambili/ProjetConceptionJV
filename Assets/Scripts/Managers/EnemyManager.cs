@@ -11,36 +11,43 @@ namespace GameProject
         public float minDistance;
         public float maxDistance;
         public Transform player;
+        public bool isPaused {get; set;}
 
         private void Awake()
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
-        void Start ()
+        void Start()
         {
             // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
-            InvokeRepeating ("Spawn", spawnTime, spawnTime);
+
+            InvokeRepeating("Spawn", spawnTime, spawnTime);
         }
 
 
-        void Spawn ()
+        void Spawn()
         {
             // If the player has no health left...
-            if(playerHealth.currentHealth <= 0f)
+            if (playerHealth.currentHealth <= 0f)
             {
                 // ... exit the function.
                 return;
             }
-            
-            // Find a random index between zero and one less than the number of spawn points.
-            int angle = Random.Range (0, 360);
-            float distance = Random.Range(minDistance, maxDistance);
 
-            Vector3 pos = new Vector3(distance * Mathf.Cos(angle * Mathf.Deg2Rad), 0f, distance * Mathf.Sin(angle * Mathf.Deg2Rad));
+            // Find a random index between zero and one less than the number of spawn points.
             
+
             // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
-            Instantiate (enemy, player.position + pos, Quaternion.identity);
+            if (!isPaused)
+            {
+                
+                int angle = Random.Range(0, 360);
+                float distance = Random.Range(minDistance, maxDistance);
+
+                Vector3 pos = new Vector3(distance * Mathf.Cos(angle * Mathf.Deg2Rad), 0f, distance * Mathf.Sin(angle * Mathf.Deg2Rad));
+                Instantiate(enemy, player.position + pos, Quaternion.identity);
+            }
         }
     }
 }

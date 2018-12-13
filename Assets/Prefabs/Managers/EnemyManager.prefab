@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114902166970976358}
   m_Layer: 0
   m_Name: EnemyManager
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   enemy: {fileID: 1315525712098392, guid: e3aa4f2543ec50f4196b5597503ad329, type: 2}
-  spawnTime: 60
+  spawnTime: 10
   minDistance: 8
   maxDistance: 13
   player: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   enemy: {fileID: 1939307879047952, guid: 4dfd7ab4d25a4564abd5f77a45e06fb1, type: 2}
-  spawnTime: 10
+  spawnTime: 15
   minDistance: 8
   maxDistance: 13
   player: {fileID: 0}

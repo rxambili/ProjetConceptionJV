@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HUD
   - Enemy
+  - EnemyManager
   layers:
   - Default
   - TransparentFX
