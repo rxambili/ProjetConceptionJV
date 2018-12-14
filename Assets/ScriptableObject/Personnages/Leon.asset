@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Leon
   description: 
   age: 35
-  artwork: {fileID: 21300000, guid: bc680b786cecb154d921fe41fcb1a72e, type: 3}
+  artwork: {fileID: 21300000, guid: 19f81a6442fe6504db8d9bd6009d3685, type: 3}
   genome:
   - {fileID: 11400000, guid: 70d1b97df7e4ca24baca4db1311575ea, type: 2}
   traits:

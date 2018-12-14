@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Ludwig
   description: 
   age: 71
-  artwork: {fileID: 21300000, guid: e4aca5e4ca4643c4fbc84b04865cf625, type: 3}
+  artwork: {fileID: 21300000, guid: 4bdd9d9d1171c6c4abea48814673c741, type: 3}
   genome:
   - {fileID: 11400000, guid: 4e4e7326f97266c4f9d995e95b381141, type: 2}
   traits:

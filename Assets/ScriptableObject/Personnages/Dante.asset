@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Dante
   description: 
   age: 25
-  artwork: {fileID: 21300000, guid: 27103ab47748925499342da217b2e5d5, type: 3}
+  artwork: {fileID: 21300000, guid: 8c79baf45de8083448c66e2d268bd0d7, type: 3}
   genome:
   - {fileID: 11400000, guid: 24ed02fde94ebe3448dba13ca6bbac5a, type: 2}
   traits:

@@ -14,7 +14,7 @@ MonoBehaviour:
   name: John
   description: 
   age: 29
-  artwork: {fileID: 21300000, guid: dab851096843afb42af1fa1a90255331, type: 3}
+  artwork: {fileID: 21300000, guid: 3e383a2df67d2c0458d6062c17f0c903, type: 3}
   genome:
   - {fileID: 11400000, guid: 31ce1ba5344a0bb458e9fea16d6107c9, type: 2}
   traits:
