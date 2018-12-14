@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d520276db6007e4c85efd3e6aa32684, type: 3}
-  m_Name: Ludwig
+  m_Name: Survivant2
   m_EditorClassIdentifier: 
-  name: Ludwig
+  name: Jane
   description: 
-  age: 71
-  artwork: {fileID: 21300000, guid: e4aca5e4ca4643c4fbc84b04865cf625, type: 3}
+  age: 21
+  artwork: {fileID: 21300000, guid: 438883743010e894faeb7c22cf2e5b83, type: 3}
   genome:
-  - {fileID: 11400000, guid: 4e4e7326f97266c4f9d995e95b381141, type: 2}
+  - {fileID: 11400000, guid: 570d156017942544e9e3cf3b9e707bf8, type: 2}
   traits:
-  - {fileID: 11400000, guid: 63776807274899f4db2f35fe65b11cd8, type: 2}
+  - {fileID: 11400000, guid: c7a0ba7ea395f5e4694c4d68a76360c7, type: 2}

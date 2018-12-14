@@ -2631,7 +2631,7 @@ MonoBehaviour:
   enemyAudio: {fileID: 82423651479933110}
   deathIntensity: 1500
   hitParticles: {fileID: 198847610746021652}
-  orbe: {fileID: 1965423881163304, guid: 74b677d01f5544d4c8fe268c19d2fcff, type: 2}
+  orbe: {fileID: 1696691911725754, guid: 45ba6bca84904724baceba08c21e4775, type: 2}
   shoutingDamageMult: 2
 --- !u!114 &114384687013509856
 MonoBehaviour:
