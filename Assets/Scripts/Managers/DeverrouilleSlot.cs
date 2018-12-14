@@ -12,15 +12,15 @@ public class DeverrouilleSlot : MonoBehaviour {
     GameObject pauvreTxt1;
     void Start()
     {
-        transform.GetComponentInChildren<Text>().text = string.Format("Ajouter un slot\n({0})", orbesNeeded);
+        transform.Find("CoutTxt").GetComponent<Text>().text = orbesNeeded.ToString();
     }
     public void deverouilleSlot()
     {
-        int orbes = GameManager.instance.nbOrbes;
-        if(orbes >= orbesNeeded)
+        
+        if(GameManager.instance.nbOrbes >= orbesNeeded)
         {
             GameManager.instance.nbSlots++;
-            orbes -= orbesNeeded;
+            GameManager.instance.nbOrbes -= orbesNeeded;
             pasPauvreTxt1 = Instantiate(pasPauvreTxt, AssemblyPanel);
             Destroy(pasPauvreTxt1, 2);
         }
