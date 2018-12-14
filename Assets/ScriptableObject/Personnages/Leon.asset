@@ -16,6 +16,6 @@ MonoBehaviour:
   age: 35
   artwork: {fileID: 21300000, guid: bc680b786cecb154d921fe41fcb1a72e, type: 3}
   genome:
-  - {fileID: 11400000, guid: 0bf9d796088b0104dbd3d48ab6802c03, type: 2}
+  - {fileID: 11400000, guid: 70d1b97df7e4ca24baca4db1311575ea, type: 2}
   traits:
   - {fileID: 11400000, guid: 024132ebb97b86246b7e3b131f3b4248, type: 2}

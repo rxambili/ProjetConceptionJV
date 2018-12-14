@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Gene6
   m_EditorClassIdentifier: 
   bonusPerception: 0
-  bonusAgilite: 0
-  bonusConstitution: 0
-  bonusTir: 0
+  bonusAgilite: 1
+  bonusConstitution: 2
+  bonusTir: -2
   bonusMelee: 0
