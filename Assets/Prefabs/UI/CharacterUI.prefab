@@ -2269,7 +2269,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 250
+  m_Text: nb
 --- !u!114 &114563751570446022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2442,7 +2442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efcae097f26f0448a29a8687b7bd9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbesNeeded: 100
+  orbesNeeded: 25
   pauvreTxt: {fileID: 1255607460487432, guid: e8c3e9457ab38c842b0b4c9368c6c6ae, type: 2}
   pasPauvreTxt: {fileID: 1757207243516862, guid: bbc3e358d9e6f964c99e6ce0a6a864e4,
     type: 2}
