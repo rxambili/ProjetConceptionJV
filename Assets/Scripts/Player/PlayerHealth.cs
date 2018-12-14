@@ -37,6 +37,7 @@ namespace GameProject
         {
             // Set the initial health of the player.
             startingHealth = playerAttr.GetStartingHealth();
+            healthSlider.maxValue = startingHealth;
             currentHealth = startingHealth;
         }
 
@@ -44,6 +45,7 @@ namespace GameProject
         void Update ()
         {
             startingHealth = playerAttr.GetStartingHealth();
+            healthSlider.maxValue = startingHealth;
             resistance = playerAttr.GetResistance();
             // If the player has just been damaged...
             if (damaged)

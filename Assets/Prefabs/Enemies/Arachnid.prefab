@@ -1643,7 +1643,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630272527787414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2395668, y: 1.2329332, z: -0.6388626}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4783329358448740}
@@ -1659,7 +1659,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1939307879047952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.660763, y: 0.00044139847, z: 52.114937}
+  m_LocalPosition: {x: 45.967228, y: 0.0004764609, z: 52.320778}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4157288658709352}
@@ -2913,7 +2913,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 3082463546793d04ca7f2610f3fe2a03, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 2.59
+  m_Pitch: 0.6
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2933,39 +2933,39 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 0.9976673
-      inSlope: -4.612166
-      outSlope: -4.612166
+      inSlope: -17.060787
+      outSlope: -17.060787
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.51925296
+      outWeight: 0.33861777
     - serializedVersion: 3
-      time: 0.11106178
-      value: 0.53692627
-      inSlope: -3.774726
-      outSlope: -3.774726
+      time: 0.059063643
+      value: 0.45413208
+      inSlope: -5.3389897
+      outSlope: -5.3389897
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 1
+      outWeight: 0.82101196
     - serializedVersion: 3
-      time: 0.19554302
-      value: 0.2553711
-      inSlope: -2.9799273
-      outSlope: -2.9799273
+      time: 0.12354061
+      value: 0.1666565
+      inSlope: -1.9896228
+      outSlope: -1.9896228
       tangentMode: 0
       weightedMode: 0
-      inWeight: 1
-      outWeight: 1
+      inWeight: 0.9234399
+      outWeight: 0.7833821
     - serializedVersion: 3
-      time: 0.3442015
-      value: 0.06729126
-      inSlope: -0.2831275
-      outSlope: -0.2831275
+      time: 0.2722029
+      value: 0.025894165
+      inSlope: -0.07487873
+      outSlope: -0.07487873
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.26374125
+      outWeight: 0.2594632
     - serializedVersion: 3
       time: 1
       value: 0.0001
@@ -3197,7 +3197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 2
   attackDamage: 5
-  range: 1.5
+  range: 1
   hitAngle: 90
 --- !u!114 &114390253281177830
 MonoBehaviour:
@@ -3306,7 +3306,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.14
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!136 &136936266379998524
 CapsuleCollider:

@@ -3442,7 +3442,7 @@ MonoBehaviour:
   hitAngle: 90
   criticalChance: 1
   criticalMult: 2
-  isAuto: 0
+  isAuto: 1
 --- !u!114 &114143332662364394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3457,23 +3457,23 @@ MonoBehaviour:
   basePV: 50
   multiplicateurPV: 10
   baseResistance: 0
-  multiplicateurResistance: 2
+  multiplicateurResistance: 5
   baseSpeed: 2
-  multiplicateurSpeed: 0.5
+  multiplicateurSpeed: 0.15
   baseRadius: 5
   multiplicateurRadius: 0.3
   baseAngle: 80
   multiplicateurAngle: 5
   basePeripheralRadius: 1
   multiplicateurPeripheralRadius: 0.1
-  baseMelee: 5
+  baseMelee: 10
   multiplicateurMelee: 1
-  baseMeleeCriticalChance: 1
-  multiplicateurMeleeCriticalChance: 1
+  baseMeleeCriticalChance: 10
+  multiplicateurMeleeCriticalChance: 2
   baseTir: 10
   multiplicateurTir: 1
-  baseCriticalChance: 1
-  multiplicateurCriticalChance: 1
+  baseCriticalChance: 10
+  multiplicateurCriticalChance: 2
   baseReloadSpeed: 0.6
   multiplicateurReloadSpeed: 0.2
   factReloadAgi: 0.2

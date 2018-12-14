@@ -20,9 +20,20 @@ public class PrisonnerScript : MonoBehaviour {
         navAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+    private void Start()
+    {
+        int i;
+        for (i = 0; i < GameManager.instance.survivants.Length; i++)
+        {
+            if (GameManager.instance.survivants[i].name == perso.name)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetButtonDown("Action") && isInRange && !isReleased)
         {
             List<Personnage> tempSurvivants = new List<Personnage>(GameManager.instance.survivants);
