@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1085747566247962
 GameObject:
   m_ObjectHideFlags: 1
@@ -3016,14 +3016,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.35
-  m_Text: "Achromatopsie : Aucune distinction des couleurs\nCoeur de Boeuf : +20pv\nCollecteur
-    : +50% de munitions ramass\xE9es\nCombattant : +5 Atk / +15% cc en Melee\nProtonopia(1-3)
-    : Blind rouge & vert (intensit\xE9)\nFragile : -10pv / -10 resistance\nGaspilleur
+  m_Text: "Achromatopsie : Aucune distinction des couleurs\nCoeur de Boeuf : +20%
+    pv\nCollecteur : +50% de munitions ramass\xE9es\nCombattant : +5% Atk / +15% cc
+    en Melee\nDaltonien(1-3) : 3 types de daltonien\nFragile : -10% pv / -10% resistance\nGaspilleur
     : -20% de munitions ramass\xE9es\nMoonwalker : Vitesse de recul rapide\nMou du
     cul : -20% vitesse de d\xE9placement\nMyope : Vision floue \xE0 longue \xE0 distance\nOeil
     de faucon : Excellente vision \xE0 distance\nSourd(D-G) : Sourd d'une oreille\nPeau
-    dure : +20pv / +30 resistance\nRecharge rapide : +50% vitesse de rechargement\nTireur
-    d'\xE9lite : +5 Atk / +15% cc \xE0 distance.\n6\xE8me sens : C\xF4ne de vision
+    dure : +20% pv / +30% resistance\nRecharge rapide : +50% vitesse de rechargement\nTireur
+    d'\xE9lite : +5% Atk / +15% cc \xE0 distance.\n6\xE8me sens : C\xF4ne de vision
     dans le dos"
 --- !u!114 &114841955683198918
 MonoBehaviour:
