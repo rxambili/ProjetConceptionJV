@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 114962522212586150}
   - component: {fileID: 114658253650211290}
   - component: {fileID: 114531877321850370}
+  - component: {fileID: 114321962752014728}
   m_Layer: 5
   m_Name: CanvasPause
   m_TagString: Untagged
@@ -1041,6 +1042,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114321962752014728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256221981509312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ed055c6eb86c94ba753f5adfd3bf80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
 --- !u!114 &114335878939958646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1292,7 +1305,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114321962752014728}
         m_MethodName: SetSfxLvl
         m_Mode: 0
         m_Arguments:
@@ -1576,7 +1589,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114321962752014728}
         m_MethodName: SetMusicLvl
         m_Mode: 0
         m_Arguments:

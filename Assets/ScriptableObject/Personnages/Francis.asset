@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Francis
   description: 
   age: 0
-  artwork: {fileID: 21300000, guid: 0c12aa7014ed6564982d361df377ca82, type: 3}
+  artwork: {fileID: 21300000, guid: 3d5f97f32f1a4214b98fc8db1c1094cd, type: 3}
   genome:
   - {fileID: 11400000, guid: 4feab3fe94611ec4180020bdbd7a34b4, type: 2}
   traits:

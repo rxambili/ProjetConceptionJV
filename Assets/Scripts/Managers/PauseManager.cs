@@ -25,7 +25,7 @@ public class PauseManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
 		{
 
-            canvas.enabled = !canvas.enabled;
+            
             Pause();
             
             
@@ -35,8 +35,8 @@ public class PauseManager : MonoBehaviour {
 	
 	public void Pause()
 	{
-        
-		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        canvas.enabled = !canvas.enabled;
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
 		Lowpass ();
         
 
